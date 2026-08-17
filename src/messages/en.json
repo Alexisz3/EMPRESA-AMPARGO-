@@ -1,0 +1,405 @@
+{
+  "Metadata": {
+    "homeTitle": "Remodeling & Construction in Houston",
+    "homeDescription": "AMPARGO provides remodeling and construction services for homeowners in Houston, Texas."
+  },
+  "Navigation": {
+    "homeLabel": "AMPARGO home",
+    "primaryLabel": "Primary navigation",
+    "mobileLabel": "Mobile navigation",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "quote": "Request an Estimate",
+    "menu": "Menu"
+  },
+  "LocaleSwitcher": {
+    "label": "Switch language to {language}",
+    "en": "English",
+    "es": "Spanish"
+  },
+  "Hero": {
+    "eyebrow": "Remodeling & construction · Houston, Texas",
+    "title": "Transforming Spaces. Building What Matters.",
+    "description": "Explore AMPARGO's remodeling and construction services, see real project work, and tell us what you are planning.",
+    "primaryCta": "Request an Estimate",
+    "secondaryCta": "View Projects",
+    "imageAlt": "Completed outdoor kitchen with a stainless steel grill, stone countertop, sink, and covered patio.",
+    "trust": {
+      "experience": {
+        "value": "30+ Years",
+        "label": "Experience"
+      },
+      "serviceArea": {
+        "value": "Houston, TX",
+        "label": "Service Area"
+      },
+      "projectTypes": {
+        "value": "Residential & Commercial",
+        "label": "Project Types"
+      }
+    }
+  },
+  "Services": {
+    "eyebrow": "WHAT WE DO",
+    "title": "Built Around Your Vision.",
+    "description": "From complete remodels to new construction, we bring planning, craftsmanship and clear communication to every project.",
+    "explore": "Explore",
+    "items": {
+      "remodeling": {
+        "title": "Remodeling",
+        "description": "Kitchens, bathrooms, flooring, walls, finishes and complete home transformations.",
+        "imageAlt": "Bathroom remodel with marble-look wall tile and a tiled walk-in shower."
+      },
+      "construction": {
+        "title": "Construction",
+        "description": "Residential and commercial construction with practical planning and careful execution.",
+        "imageAlt": "Construction crew member working on the roof structure of a covered patio."
+      },
+      "designPlanning": {
+        "title": "Design & Planning",
+        "description": "Architectural design and planning support from the initial idea through project execution."
+      },
+      "additional": {
+        "title": "Additional Services",
+        "description": "Maintenance, electrical and plumbing services for complete project support."
+      }
+    }
+  },
+  "FeaturedProjects": {
+    "eyebrow": "FEATURED PROJECTS",
+    "title": "Spaces We’ve Transformed.",
+    "description": "A selection of remodeling and construction work from real client projects.",
+    "viewAll": "View All Projects",
+    "items": {
+      "outdoorKitchen": {
+        "title": "Outdoor Kitchen",
+        "imageAlt": "Outdoor kitchen with a built-in stainless steel grill, cooktop and stone counters."
+      },
+      "interiorRenovation": {
+        "title": "Interior Renovation",
+        "imageAlt": "Renovated open-plan interior with wood flooring, paneled cabinetry and contrasting trim."
+      },
+      "bathroomRemodel": {
+        "title": "Bathroom Remodel",
+        "imageAlt": "Bathroom remodel with marble-look tile and a spacious tiled shower."
+      },
+      "kitchenCountertops": {
+        "title": "Kitchen & Countertops",
+        "imageAlt": "Kitchen with stone countertops, a tiled backsplash and under-cabinet lighting."
+      }
+    }
+  },
+  "About": {
+    "eyebrow": "ABOUT US",
+    "title": "Experience You Can Build On.",
+    "description": "With decades of hands-on experience, we approach every project with practical planning, quality workmanship and respect for the client's space, budget and goals.",
+    "stat": {
+      "value": "30+",
+      "label": "Years of Experience"
+    },
+    "cta": "About AMPARGO",
+    "imageAlt": "Timber framing for a covered patio structure during construction."
+  },
+  "ProjectTransformation": {
+    "eyebrow": "PROJECT TRANSFORMATION",
+    "title": "A Project in Progress.",
+    "description": "Two stages of the same patio structure, documented during construction.",
+    "stages": {
+      "framing": {
+        "label": "Timber Framing",
+        "imageAlt": "Timber posts and roof framing for a patio structure during construction."
+      },
+      "roofing": {
+        "label": "Roofing Progress",
+        "imageAlt": "The same patio structure at a later stage with its roof installed."
+      }
+    }
+  },
+  "WhyChooseUs": {
+    "eyebrow": "WHY CHOOSE US",
+    "title": "Built on Experience. Focused on Quality.",
+    "description": "A clear, practical approach to remodeling and construction — with attention to communication, detail and dependable execution.",
+    "items": {
+      "experience": {
+        "title": "Experience",
+        "description": "Decades of practical remodeling and construction experience."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Careful workmanship and attention to the details that matter."
+      },
+      "reliability": {
+        "title": "Reliability",
+        "description": "Clear communication, realistic expectations and respect for your space."
+      },
+      "versatility": {
+        "title": "Versatility",
+        "description": "Residential and commercial work across a wide range of project types."
+      }
+    }
+  },
+  "Process": {
+    "eyebrow": "OUR PROCESS",
+    "title": "A Straightforward Path From Idea to Completion.",
+    "description": "A simple process designed to keep every project clear, organized and moving forward.",
+    "steps": {
+      "consultation": {
+        "title": "Consultation",
+        "description": "Tell us about your project, ideas and goals."
+      },
+      "estimate": {
+        "title": "Estimate",
+        "description": "We review the scope and prepare a clear project estimate."
+      },
+      "planning": {
+        "title": "Planning",
+        "description": "Materials, timing and project details are organized before work begins."
+      },
+      "construction": {
+        "title": "Construction",
+        "description": "Our team executes the project with care and clear communication."
+      },
+      "completion": {
+        "title": "Completion",
+        "description": "We review the final details and prepare the space for completion."
+      }
+    }
+  },
+  "FinalCta": {
+    "eyebrow": "START YOUR PROJECT",
+    "title": "Ready to Transform Your Space?",
+    "description": "Tell us about your remodeling or construction project and request an estimate.",
+    "primaryCta": "Request an Estimate",
+    "secondaryCta": "Call (832) 794-0720"
+  },
+  "Footer": {
+    "description": "Remodeling and construction services in Houston, Texas.",
+    "quickLinksLabel": "Quick Links",
+    "quickLinks": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "servicesLabel": "Services",
+    "services": {
+      "remodeling": "Remodeling",
+      "construction": "Construction",
+      "designPlanning": "Design & Planning",
+      "maintenance": "Maintenance"
+    },
+    "contactLabel": "Contact",
+    "copyright": "© 2026 AMPARGO. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "languagesLabel": "Language options"
+  },
+  "AboutPage": {
+    "metadata": {
+      "title": "About AMPARGO — Houston Remodeling & Construction",
+      "description": "Learn about AMPARGO's practical, quality-focused approach to remodeling and construction projects in Houston."
+    },
+    "hero": {
+      "eyebrow": "ABOUT AMPARGO",
+      "title": "Experience Built Through Real Work.",
+      "description": "AMPARGO brings decades of hands-on experience to remodeling and construction projects, combining practical planning, quality workmanship and attention to the details that matter.",
+      "imageAlt": "Residential pool and outdoor structure under construction as part of an active client project."
+    },
+    "experience": {
+      "label": "Years of Experience",
+      "description": "Decades of hands-on work help us approach each project with practical judgment, careful coordination and an understanding of what quality execution requires."
+    },
+    "approach": {
+      "eyebrow": "HOW WE WORK",
+      "title": "A Practical Approach to Every Project.",
+      "description": "Good results begin with a clear plan and continue through careful work, consistent communication and respect for the client's priorities.",
+      "items": {
+        "planning": {
+          "title": "Practical Planning",
+          "description": "We organize project details and priorities before work moves forward."
+        },
+        "workmanship": {
+          "title": "Quality Workmanship",
+          "description": "Careful execution and attention to the details that shape the finished result."
+        },
+        "communication": {
+          "title": "Clear Communication",
+          "description": "Straightforward conversations help keep expectations and decisions clear."
+        },
+        "respect": {
+          "title": "Respect for Your Goals",
+          "description": "Every project is approached with respect for the space, budget and intended outcome."
+        }
+      }
+    },
+    "values": {
+      "eyebrow": "WHAT GUIDES US",
+      "title": "Values That Show in the Work.",
+      "description": "A professional approach built around consistency, care and practical value at every stage of the project.",
+      "items": {
+        "trust": {
+          "title": "Trust",
+          "description": "Clear expectations and respectful communication from start to finish."
+        },
+        "quality": {
+          "title": "Quality",
+          "description": "Workmanship that gives important details the attention they deserve."
+        },
+        "reliability": {
+          "title": "Reliability",
+          "description": "An organized, dependable approach to project responsibilities."
+        },
+        "experience": {
+          "title": "Experience",
+          "description": "Practical knowledge developed through decades of real project work."
+        },
+        "professionalism": {
+          "title": "Professionalism",
+          "description": "Respect for the client, the work area and the goals of each project."
+        },
+        "value": {
+          "title": "Competitive Value",
+          "description": "Thoughtful solutions focused on quality, priorities and the project budget."
+        }
+      }
+    },
+    "work": {
+      "eyebrow": "REAL WORK",
+      "title": "Experience You Can See in the Details.",
+      "images": {
+        "bathroom": "Tiled bathroom and shower area during a remodeling project.",
+        "structure": "Timber roof structure during patio construction.",
+        "kitchen": "Kitchen cabinetry and countertops during installation.",
+        "woodwork": "Detailed custom wood panel with geometric trim."
+      }
+    },
+    "cta": {
+      "title": "Let’s Talk About Your Project.",
+      "description": "Tell us what you are planning and request an estimate for your remodeling or construction project.",
+      "primary": "Request an Estimate",
+      "secondary": "Call (832) 794-0720"
+    }
+  },
+  "ServicesPage": {
+    "metadata": {
+      "title": "Remodeling & Construction Services in Houston",
+      "description": "Explore AMPARGO remodeling, construction, design planning and project support services in Houston, Texas."
+    },
+    "hero": {
+      "eyebrow": "OUR SERVICES",
+      "title": "From Remodeling to Complete Construction.",
+      "description": "Practical construction and remodeling solutions for residential and commercial projects in Houston."
+    },
+    "categories": {
+      "remodeling": {
+        "title": "Remodeling",
+        "description": "Thoughtful updates and complete transformations designed around how each space needs to look, feel and function.",
+        "imageAlt": "Kitchen cabinetry and stone countertops during a remodeling project.",
+        "items": {
+          "0": "Kitchens",
+          "1": "Bathrooms",
+          "2": "Flooring",
+          "3": "Walls",
+          "4": "Finishes",
+          "5": "Laundry areas",
+          "6": "General remodeling"
+        }
+      },
+      "construction": {
+        "title": "Construction",
+        "description": "Practical planning and careful execution for residential and commercial building projects at different scales.",
+        "imageAlt": "Crew building the timber roof structure for a residential patio project.",
+        "items": {
+          "0": "Residential construction",
+          "1": "Home construction",
+          "2": "Commercial construction"
+        }
+      },
+      "designPlanning": {
+        "title": "Design & Planning",
+        "description": "Early project support that helps organize the idea, define priorities and prepare the work for execution.",
+        "items": {
+          "0": "Architectural design",
+          "1": "Project planning"
+        }
+      },
+      "additional": {
+        "title": "Additional Services",
+        "description": "Practical support services that help address essential project needs and complete the scope of work.",
+        "imageAlt": "Plumbing installation work being completed in a bathroom area.",
+        "items": {
+          "0": "Maintenance",
+          "1": "Electrical",
+          "2": "Plumbing"
+        }
+      }
+    },
+    "cta": {
+      "title": "Have a Project in Mind?",
+      "description": "Tell us what you're planning and request an estimate for your project.",
+      "primary": "Request an Estimate",
+      "secondary": "Call (832) 794-0720"
+    }
+  },
+  "ProjectsPage": {
+    "metadata": { "title": "Remodeling & Construction Projects in Houston", "description": "Explore real AMPARGO remodeling and construction project work documented across Houston client projects." },
+    "hero": { "eyebrow": "OUR WORK", "title": "Real Projects. Real Craftsmanship.", "description": "Explore a selection of remodeling and construction work completed and documented across real client projects." },
+    "intro": { "eyebrow": "SELECTED PROJECTS", "title": "Work Documented in the Details.", "description": "A visual collection of completed spaces and active construction, organized only where the photographs clearly document the same project." },
+    "groups": {
+      "outdoor": { "tag": "COMPLETED WORK", "title": "Outdoor Kitchen", "description": "Outdoor construction and finishing work documented through multiple project views.", "images": { "0": "Completed outdoor kitchen with built-in grill, sink and stone counters.", "1": "Close view of the grill and cooking area in the outdoor kitchen.", "2": "Stone counter and sink area beside the outdoor grill." } },
+      "bathroom": { "tag": "BATHROOM REMODELING", "title": "Bathroom Remodel", "description": "Two views documenting the tiled shower and bathroom surfaces in the same remodeled space.", "images": { "0": "Tiled bathroom with a walk-in shower and marble-look wall finish.", "1": "Second view of the same bathroom showing the shower floor and wall tile." } },
+      "patio": { "tag": "PROJECT PROGRESS", "title": "Patio Construction", "description": "Framing and roofing progress documented across the same outdoor structure.", "images": { "0": "Timber posts and roof framing during patio construction.", "1": "Crew working on the timber roof structure of the same patio.", "2": "Patio structure with its roof framing prepared for the next stage." } },
+      "kitchen": { "tag": "WORK IN PROGRESS", "title": "Kitchen & Countertops", "description": "Cabinet and countertop installation documented through several views of the same kitchen.", "images": { "0": "Kitchen cabinetry and stone countertops during installation.", "1": "Stone backsplash and countertop installed between kitchen cabinets.", "2": "Additional view of the same kitchen cabinetry and countertop work." } },
+      "interior": { "tag": "COMPLETED WORK", "title": "Interior Renovation", "description": "Finished interior surfaces documented through two views of the renovated kitchen and living area.", "images": { "0": "Finished kitchen sink area with countertop, backsplash and under-cabinet lighting.", "1": "Open-plan renovated interior with kitchen cabinetry and wood flooring." } },
+      "pool": { "tag": "CONSTRUCTION PROCESS", "title": "Outdoor Construction", "description": "A real client project photographed during active construction.", "images": { "0": "Residential pool and outdoor structure documented while construction was in progress." } }
+    },
+    "lightbox": { "open": "Open image", "close": "Close", "next": "Next image", "previous": "Previous image" },
+    "cta": { "title": "Have a Project in Mind?", "description": "Tell us what you're planning and request an estimate.", "primary": "Request an Estimate", "secondary": "Call (832) 794-0720" }
+  },
+  "QuotePage": {
+    "metadata": { "title": "Request a Remodeling or Construction Estimate", "description": "Tell AMPARGO about your remodeling or construction project in Houston and request an estimate." },
+    "hero": { "eyebrow": "REQUEST AN ESTIMATE", "title": "Tell Us About Your Project.", "description": "Share a few details about your remodeling or construction project and our team can follow up with you." },
+    "form": {
+      "title": "Project Details",
+      "intro": "Complete the form below. Required fields are marked with an asterisk.",
+      "fields": { "fullName": "Full Name", "phone": "Phone", "email": "Email", "address": "Project Address / ZIP Code", "projectType": "Project Type", "budget": "Estimated Budget", "desiredStartDate": "Desired Start Date", "description": "Project Description", "files": "Upload Photos / Plans" },
+      "selectPlaceholder": "Select a project type",
+      "budgetPlaceholder": "Enter an amount or general range",
+      "descriptionHelp": "Include the space, work you are considering and any important project goals.",
+      "fileHelp": "Up to 5 JPG, JPEG, PNG or PDF files. Maximum 10 MB per file and 25 MB total.",
+      "privacyNote": "By submitting this form, you agree that AMPARGO may use the information provided to respond to your request. Review our <privacy>Privacy Policy</privacy>.",
+      "requiredNote": "Required field",
+      "submit": "Send Request",
+      "submitting": "Validating Request…",
+      "projectTypes": { "remodeling": "Remodeling", "construction": "Construction", "design-planning": "Design & Planning", "maintenance": "Maintenance", "electrical": "Electrical", "plumbing": "Plumbing", "other": "Other" },
+      "errors": { "required": "This field is required.", "invalidName": "Enter your full name.", "invalidPhone": "Enter a valid phone number with 10 to 15 digits.", "invalidEmail": "Enter a valid email address.", "invalidProjectType": "Select a valid project type.", "invalidDate": "Enter a valid date.", "descriptionTooShort": "Please provide at least 20 characters about your project.", "tooLong": "This entry is too long.", "fileCount": "Attach no more than 5 files.", "fileSize": "Each file must be 10 MB or smaller.", "fileType": "File extensions and types must be JPG, JPEG, PNG or PDF.", "fileEmpty": "Empty files cannot be attached.", "fileSignature": "One or more files do not match their stated format.", "totalFileSize": "The combined file size must not exceed 25 MB." },
+      "status": { "success": "Your request was submitted successfully.", "validation": "Please review the highlighted fields and try again.", "tooFast": "Please take a moment to review your project details, then submit again.", "notConfigured": "Your information was validated, but online delivery is not active yet. Please call Joe or Mario from the Contact page.", "delivery": "The request could not be delivered. Your entries are still available above; please try again or call us." }
+    }
+  },
+  "ContactPage": {
+    "metadata": { "title": "Contact AMPARGO in Houston", "description": "Contact AMPARGO about remodeling and construction projects in Houston, Texas." },
+    "hero": { "eyebrow": "CONTACT", "title": "Let’s Talk About Your Project.", "description": "Have a remodeling or construction project in mind? Get in touch with AMPARGO in Houston." },
+    "details": { "eyebrow": "GET IN TOUCH", "title": "Talk With Our Team.", "whatsapp": "WhatsApp", "serviceArea": "Service Area", "address": "Address" },
+    "cta": "Request an Estimate",
+    "map": { "title": "Map showing AMPARGO at 8027 Burning Hills Drive in Houston", "note": "Map provided through a standard Google Maps embed. No site API key is used." }
+  },
+  "PrivacyPage": {
+    "metadata": { "title": "Privacy Policy", "description": "Read how AMPARGO handles information submitted through this website." },
+    "hero": { "eyebrow": "PRIVACY", "title": "Privacy Policy", "description": "This policy explains how information submitted through the AMPARGO website may be collected, used and protected." },
+    "notice": "This is an initial website privacy policy and should receive legal review before final publication.",
+    "sections": {
+      "information": { "title": "Information We Collect", "body": "When you request an estimate or contact AMPARGO, we may collect your name, phone number, email address, project address or ZIP code, project type, estimated budget, desired start date, project description and any photos or plans you choose to attach." },
+      "use": { "title": "How We Use Information", "body": "We use submitted information to review project requests, communicate with you, prepare follow-up questions and respond about remodeling or construction services." },
+      "sharing": { "title": "Information Sharing", "body": "AMPARGO does not sell personal information. Information may be shared only with service providers needed to operate the website or deliver communications after those services are approved and configured." },
+      "security": { "title": "Security", "body": "We use reasonable administrative and technical measures intended to protect information. No website or electronic transmission can be guaranteed to be completely secure." },
+      "retention": { "title": "Data Retention", "body": "Information should be retained only as long as reasonably necessary to respond to a request, manage a potential project or meet legitimate operational obligations." },
+      "analytics": { "title": "Analytics", "body": "Website analytics may be activated in the future to understand general site usage. Analytics is not loaded unless a valid measurement identifier is configured." },
+      "choices": { "title": "Your Questions and Choices", "body": "You may contact AMPARGO to ask about information you submitted or request an appropriate update or deletion, subject to legitimate business and recordkeeping needs." },
+      "changes": { "title": "Policy Updates", "body": "This policy may be updated when website features, service providers or operating practices change. The current version will be published on this page." }
+    },
+    "contact": { "title": "Privacy Questions", "body": "Official contact methods for privacy questions are available on the Contact page. A privacy email address has not yet been established.", "cta": "View Contact Information" }
+  },
+  "NotFound": { "title": "Page not found.", "description": "The page you requested does not exist or may have moved.", "home": "Return to Home" }
+}

@@ -1,0 +1,110 @@
+"use client";
+
+import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+export type ProjectGroup = {
+  title: string;
+  description: string;
+  tag: string;
+  images: { src: string; alt: string; portrait?: boolean }[];
+};
+
+type Props = {
+  groups: ProjectGroup[];
+  closeLabel: string;
+  nextLabel: string;
+  previousLabel: string;
+  openLabel: string;
+};
+
+export function ProjectsGallery({ groups, closeLabel, nextLabel, previousLabel, openLabel }: Props) {
+  const [active, setActive] = useState<{ group: number; image: number } | null>(null);
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const currentGroup = active ? groups[active.group] : null;
+  const current = currentGroup && active ? currentGroup.images[active.image] : null;
+
+  const move = useCallback((direction: number) => {
+    if (!active || !currentGroup) return;
+    setActive({ group: active.group, image: (active.image + direction + currentGroup.images.length) % currentGroup.images.length });
+  }, [active, currentGroup]);
+
+  const closeLightbox = useCallback(() => {
+    setActive(null);
+    window.requestAnimationFrame(() => lastTriggerRef.current?.focus());
+  }, []);
+
+  useEffect(() => {
+    if (!active) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") move(-1);
+      if (event.key === "ArrowRight") move(1);
+      if (event.key === "Tab") {
+        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>('button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])');
+        if (!focusable?.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => { document.body.style.overflow = previousOverflow; window.removeEventListener("keydown", onKey); };
+  }, [active, closeLightbox, move]);
+
+  return (
+    <>
+      <div className="space-y-24 sm:space-y-32">
+        {groups.map((group, groupIndex) => (
+          <section key={group.title} aria-labelledby={`project-${groupIndex}`}>
+            <div className="grid gap-6 border-t border-black/15 pt-7 md:grid-cols-[0.7fr_1.3fr] md:gap-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{group.tag}</p>
+              <div>
+                <h2 id={`project-${groupIndex}`} className="text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">{group.title}</h2>
+                <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">{group.description}</p>
+              </div>
+            </div>
+            <div className={`mt-10 grid min-w-0 gap-4 md:grid-cols-2 ${group.images.length >= 3 ? "lg:grid-cols-12" : ""}`}>
+              {group.images.map((image, imageIndex) => (
+                <button
+                  key={image.src}
+                  type="button"
+                  onClick={(event) => { lastTriggerRef.current = event.currentTarget; setActive({ group: groupIndex, image: imageIndex }); }}
+                  aria-label={`${openLabel}: ${image.alt}`}
+                  className={`group relative min-w-0 overflow-hidden rounded-[1.5rem] bg-black/5 text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground ${
+                    group.images.length >= 3
+                      ? imageIndex === 0 ? "aspect-[4/3] lg:col-span-7 lg:row-span-2 lg:aspect-auto lg:min-h-[680px]" : "aspect-[4/3] lg:col-span-5 lg:aspect-auto lg:min-h-[332px]"
+                      : image.portrait ? "aspect-[4/5]" : "aspect-[4/3]"
+                  }`}
+                >
+                  <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1024px) 55vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 lg:group-hover:scale-[1.025]" />
+                  <span className="absolute bottom-4 right-4 rounded-full bg-black/60 px-4 py-2 text-sm font-medium text-white backdrop-blur">{imageIndex + 1} / {group.images.length}</span>
+                </button>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      {active && current ? (
+        <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={currentGroup?.title} className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 sm:p-8" onMouseDown={(event) => { if (event.target === event.currentTarget) closeLightbox(); }}>
+          <button autoFocus type="button" onClick={closeLightbox} aria-label={closeLabel} className="absolute right-4 top-4 z-10 rounded-full border border-white/25 bg-black/40 px-5 py-3 text-sm font-semibold text-white sm:right-7 sm:top-7">{closeLabel} <span aria-hidden="true">×</span></button>
+          {currentGroup && currentGroup.images.length > 1 ? (
+            <>
+              <button type="button" onClick={() => move(-1)} aria-label={previousLabel} className="absolute left-3 z-10 grid size-12 place-items-center rounded-full border border-white/25 bg-black/40 text-2xl text-white sm:left-7">←</button>
+              <button type="button" onClick={() => move(1)} aria-label={nextLabel} className="absolute right-3 z-10 grid size-12 place-items-center rounded-full border border-white/25 bg-black/40 text-2xl text-white sm:right-7">→</button>
+            </>
+          ) : null}
+          <div className="relative h-[82vh] w-[88vw] max-w-6xl">
+            <Image src={current.src} alt={current.alt} fill sizes="90vw" className="object-contain" priority />
+          </div>
+          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center text-sm text-white/75">{currentGroup?.title} · {active.image + 1} / {currentGroup?.images.length}</p>
+        </div>
+      ) : null}
+    </>
+  );
+}

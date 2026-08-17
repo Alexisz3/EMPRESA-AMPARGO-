@@ -75,58 +75,73 @@ export function EstimateForm() {
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
       <input type="hidden" name="formStartedAt" value={formStartedAt} />
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div>
-          <label className={labelClass} htmlFor="fullName">{t("fields.fullName")} <span className="text-accent" aria-hidden="true">*</span></label>
-          <input className={inputClass} id="fullName" name="fullName" autoComplete="name" required maxLength={100} aria-invalid={Boolean(errors.fullName)} aria-describedby={errors.fullName ? "fullName-error" : undefined} onChange={() => clearError("fullName")} />
-          {fieldError("fullName")}
+      <fieldset>
+        <legend className="mb-5 flex items-center gap-3 text-lg font-semibold">
+          <span className="text-sm tracking-[0.16em] text-accent">01</span>
+          {t("groups.contact")}
+        </legend>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <label className={labelClass} htmlFor="fullName">{t("fields.fullName")} <span className="text-accent" aria-hidden="true">*</span></label>
+            <input className={inputClass} id="fullName" name="fullName" autoComplete="name" required maxLength={100} aria-invalid={Boolean(errors.fullName)} aria-describedby={errors.fullName ? "fullName-error" : undefined} onChange={() => clearError("fullName")} />
+            {fieldError("fullName")}
+          </div>
+          <div>
+            <label className={labelClass} htmlFor="phone">{t("fields.phone")} <span className="text-accent" aria-hidden="true">*</span></label>
+            <input className={inputClass} id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" required maxLength={40} aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "phone-error" : undefined} onChange={() => clearError("phone")} />
+            {fieldError("phone")}
+          </div>
+          <div>
+            <label className={labelClass} htmlFor="email">{t("fields.email")} <span className="text-accent" aria-hidden="true">*</span></label>
+            <input className={inputClass} id="email" name="email" type="email" inputMode="email" autoComplete="email" required maxLength={254} aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "email-error" : undefined} onChange={() => clearError("email")} />
+            {fieldError("email")}
+          </div>
         </div>
-        <div>
-          <label className={labelClass} htmlFor="phone">{t("fields.phone")} <span className="text-accent" aria-hidden="true">*</span></label>
-          <input className={inputClass} id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" required maxLength={40} aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? "phone-error" : undefined} onChange={() => clearError("phone")} />
-          {fieldError("phone")}
-        </div>
-        <div>
-          <label className={labelClass} htmlFor="email">{t("fields.email")} <span className="text-accent" aria-hidden="true">*</span></label>
-          <input className={inputClass} id="email" name="email" type="email" inputMode="email" autoComplete="email" required maxLength={254} aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "email-error" : undefined} onChange={() => clearError("email")} />
-          {fieldError("email")}
-        </div>
-        <div>
+      </fieldset>
+
+      <fieldset className="mt-9 border-t border-black/10 pt-8">
+        <legend className="flex translate-y-4 items-center gap-3 bg-surface pr-4 text-lg font-semibold">
+          <span className="text-sm tracking-[0.16em] text-accent">02</span>
+          {t("groups.project")}
+        </legend>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          <div>
           <label className={labelClass} htmlFor="address">{t("fields.address")}</label>
           <input className={inputClass} id="address" name="address" autoComplete="street-address postal-code" maxLength={200} aria-invalid={Boolean(errors.address)} aria-describedby={errors.address ? "address-error" : undefined} onChange={() => clearError("address")} />
           {fieldError("address")}
+          </div>
+          <div>
+            <label className={labelClass} htmlFor="projectType">{t("fields.projectType")} <span className="text-accent" aria-hidden="true">*</span></label>
+            <select className={inputClass} id="projectType" name="projectType" required defaultValue="" aria-invalid={Boolean(errors.projectType)} aria-describedby={errors.projectType ? "projectType-error" : undefined} onChange={() => clearError("projectType")}>
+              <option value="" disabled>{t("selectPlaceholder")}</option>
+              {PROJECT_TYPES.map((type) => <option key={type} value={type}>{t(`projectTypes.${type}`)}</option>)}
+            </select>
+            {fieldError("projectType")}
+          </div>
+          <div>
+            <label className={labelClass} htmlFor="budget">{t("fields.budget")}</label>
+            <input className={inputClass} id="budget" name="budget" inputMode="decimal" maxLength={100} placeholder={t("budgetPlaceholder")} aria-invalid={Boolean(errors.budget)} aria-describedby={errors.budget ? "budget-error" : undefined} onChange={() => clearError("budget")} />
+            {fieldError("budget")}
+          </div>
+          <div>
+            <label className={labelClass} htmlFor="desiredStartDate">{t("fields.desiredStartDate")}</label>
+            <input className={inputClass} id="desiredStartDate" name="desiredStartDate" type="date" aria-invalid={Boolean(errors.desiredStartDate)} aria-describedby={errors.desiredStartDate ? "desiredStartDate-error" : undefined} onChange={() => clearError("desiredStartDate")} />
+            {fieldError("desiredStartDate")}
+          </div>
+          <div className="sm:col-span-2">
+            <label className={labelClass} htmlFor="description">{t("fields.description")} <span className="text-accent" aria-hidden="true">*</span></label>
+            <textarea className={`${inputClass} min-h-40 resize-y py-3`} id="description" name="description" required minLength={20} maxLength={3000} aria-invalid={Boolean(errors.description)} aria-describedby={errors.description ? "description-error" : "description-help"} onChange={() => clearError("description")} />
+            <p id="description-help" className="mt-2 text-sm text-muted">{t("descriptionHelp")}</p>
+            {fieldError("description")}
+          </div>
+          <div className="sm:col-span-2">
+            <label className={labelClass} htmlFor="files">{t("fields.files")}</label>
+            <input className="mt-2 block min-h-12 w-full cursor-pointer rounded-xl border border-dashed border-black/20 bg-background px-3 py-3 text-base file:mr-3 file:rounded-full file:border-0 file:bg-foreground file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:border-accent focus:outline-2 focus:outline-offset-2 focus:outline-accent sm:px-4" id="files" name="files" type="file" multiple accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf" aria-invalid={Boolean(errors.files)} aria-describedby={errors.files ? "files-error" : "files-help"} onChange={() => clearError("files")} />
+            <p id="files-help" className="mt-2 text-sm leading-6 text-muted">{t("fileHelp")}</p>
+            {fieldError("files")}
+          </div>
         </div>
-        <div>
-          <label className={labelClass} htmlFor="projectType">{t("fields.projectType")} <span className="text-accent" aria-hidden="true">*</span></label>
-          <select className={inputClass} id="projectType" name="projectType" required defaultValue="" aria-invalid={Boolean(errors.projectType)} aria-describedby={errors.projectType ? "projectType-error" : undefined} onChange={() => clearError("projectType")}>
-            <option value="" disabled>{t("selectPlaceholder")}</option>
-            {PROJECT_TYPES.map((type) => <option key={type} value={type}>{t(`projectTypes.${type}`)}</option>)}
-          </select>
-          {fieldError("projectType")}
-        </div>
-        <div>
-          <label className={labelClass} htmlFor="budget">{t("fields.budget")}</label>
-          <input className={inputClass} id="budget" name="budget" inputMode="decimal" maxLength={100} placeholder={t("budgetPlaceholder")} aria-invalid={Boolean(errors.budget)} aria-describedby={errors.budget ? "budget-error" : undefined} onChange={() => clearError("budget")} />
-          {fieldError("budget")}
-        </div>
-        <div className="sm:col-span-2">
-          <label className={labelClass} htmlFor="desiredStartDate">{t("fields.desiredStartDate")}</label>
-          <input className={`${inputClass} sm:max-w-sm`} id="desiredStartDate" name="desiredStartDate" type="date" aria-invalid={Boolean(errors.desiredStartDate)} aria-describedby={errors.desiredStartDate ? "desiredStartDate-error" : undefined} onChange={() => clearError("desiredStartDate")} />
-          {fieldError("desiredStartDate")}
-        </div>
-        <div className="sm:col-span-2">
-          <label className={labelClass} htmlFor="description">{t("fields.description")} <span className="text-accent" aria-hidden="true">*</span></label>
-          <textarea className={`${inputClass} min-h-40 resize-y py-3`} id="description" name="description" required minLength={20} maxLength={3000} aria-invalid={Boolean(errors.description)} aria-describedby={errors.description ? "description-error" : "description-help"} onChange={() => clearError("description")} />
-          <p id="description-help" className="mt-2 text-sm text-muted">{t("descriptionHelp")}</p>
-          {fieldError("description")}
-        </div>
-        <div className="sm:col-span-2">
-          <label className={labelClass} htmlFor="files">{t("fields.files")}</label>
-          <input className="mt-2 block min-h-12 w-full cursor-pointer rounded-xl border border-dashed border-black/20 bg-background px-3 py-3 text-base file:mr-3 file:rounded-full file:border-0 file:bg-foreground file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:border-accent focus:outline-2 focus:outline-offset-2 focus:outline-accent sm:px-4" id="files" name="files" type="file" multiple accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf" aria-invalid={Boolean(errors.files)} aria-describedby={errors.files ? "files-error" : "files-help"} onChange={() => clearError("files")} />
-          <p id="files-help" className="mt-2 text-sm leading-6 text-muted">{t("fileHelp")}</p>
-          {fieldError("files")}
-        </div>
-      </div>
+      </fieldset>
 
       <p className="mt-7 text-sm leading-6 text-muted">{t.rich("privacyNote", { privacy: (chunks) => <Link href="/privacy" className="font-semibold text-foreground underline underline-offset-4">{chunks}</Link> })}</p>
 

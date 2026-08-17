@@ -85,7 +85,7 @@ export async function Services() {
               data-reveal
               className="service-card flex min-w-0 flex-col overflow-hidden rounded-[1.5rem] border border-black/10 bg-surface"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-[#e8e2d8] sm:aspect-[4/3]">
+              <div className="relative aspect-[16/9] overflow-hidden bg-[#e8e2d8] sm:aspect-[4/3]">
                 {"image" in service ? (
                   <Image
                     src={service.image}
@@ -99,7 +99,7 @@ export async function Services() {
                 )}
               </div>
 
-              <div className="flex flex-1 flex-col px-6 py-7">
+              <div className="flex flex-1 flex-col px-5 py-6 sm:px-6 sm:py-7">
                 <span className="text-sm font-semibold tracking-[0.16em] text-accent">
                   {service.number}
                 </span>
@@ -111,7 +111,7 @@ export async function Services() {
                 </p>
                 <Link
                   href={`/services#${serviceAnchors[service.key]}`}
-                  className="mt-7 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-foreground underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                  className="mt-5 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-foreground underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:mt-7"
                 >
                   {t("explore")} <span aria-hidden="true">→</span>
                 </Link>

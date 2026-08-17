@@ -30,7 +30,7 @@ export async function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-flex text-xl font-bold tracking-[0.16em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="inline-flex min-h-11 items-center text-xl font-bold tracking-[0.16em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               AMPARGO
             </Link>

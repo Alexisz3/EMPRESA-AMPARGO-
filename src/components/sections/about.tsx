@@ -44,7 +44,7 @@ export async function About() {
 
             <Link
               href="/about"
-              className="mt-9 inline-flex w-fit items-center gap-2 text-base font-semibold text-foreground underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+              className="mt-9 inline-flex min-h-11 w-fit items-center gap-2 text-base font-semibold text-foreground underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
             >
               {t("cta")} <span aria-hidden="true">→</span>
             </Link>

@@ -12,6 +12,8 @@
     "about": "About",
     "contact": "Contact",
     "quote": "Request an Estimate",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
     "menu": "Menu"
   },
   "LocaleSwitcher": {
@@ -364,6 +366,7 @@
     "form": {
       "title": "Project Details",
       "intro": "Complete the form below. Required fields are marked with an asterisk.",
+      "groups": { "contact": "Contact information", "project": "Project information" },
       "fields": { "fullName": "Full Name", "phone": "Phone", "email": "Email", "address": "Project Address / ZIP Code", "projectType": "Project Type", "budget": "Estimated Budget", "desiredStartDate": "Desired Start Date", "description": "Project Description", "files": "Upload Photos / Plans" },
       "selectPlaceholder": "Select a project type",
       "budgetPlaceholder": "Enter an amount or general range",
@@ -381,7 +384,7 @@
   "ContactPage": {
     "metadata": { "title": "Contact AMPARGO in Houston", "description": "Contact AMPARGO about remodeling and construction projects in Houston, Texas." },
     "hero": { "eyebrow": "CONTACT", "title": "Let’s Talk About Your Project.", "description": "Have a remodeling or construction project in mind? Get in touch with AMPARGO in Houston." },
-    "details": { "eyebrow": "GET IN TOUCH", "title": "Talk With Our Team.", "whatsapp": "WhatsApp", "serviceArea": "Service Area", "address": "Address" },
+    "details": { "eyebrow": "GET IN TOUCH", "title": "Talk With Our Team.", "call": "Call", "whatsapp": "WhatsApp", "serviceArea": "Service Area", "address": "Address" },
     "cta": "Request an Estimate",
     "map": { "title": "Map showing AMPARGO at 8027 Burning Hills Drive in Houston", "note": "Map provided through a standard Google Maps embed. No site API key is used." }
   },

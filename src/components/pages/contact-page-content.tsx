@@ -36,7 +36,7 @@ export async function ContactPageContent() {
                   <article key={contact.name} data-reveal className="rounded-[1.5rem] border border-black/10 bg-surface p-5 sm:p-7">
                     <h3 className="text-xl font-semibold">{contact.name}</h3>
                     <div className="mt-4 flex flex-wrap gap-3">
-                      <a href={`tel:${contact.tel}`} className="motion-button inline-flex min-h-12 w-full items-center justify-center rounded-full bg-foreground px-5 font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:w-auto">{contact.phone}</a>
+                      <a href={`tel:${contact.tel}`} className="motion-button inline-flex min-h-12 w-full items-center justify-center rounded-full bg-foreground px-5 font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:w-auto">{t("details.call")} {contact.phone}</a>
                       <a href={`https://wa.me/${contact.whatsapp}`} target="_blank" rel="noreferrer" className="motion-button inline-flex min-h-12 w-full items-center justify-center rounded-full border border-black/20 px-5 font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:w-auto">{t("details.whatsapp")}</a>
                     </div>
                   </article>

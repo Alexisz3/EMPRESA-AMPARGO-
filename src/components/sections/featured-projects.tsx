@@ -64,7 +64,7 @@ export async function FeaturedProjects() {
           </div>
           <Link
             href="/projects"
-            className="inline-flex w-fit items-center gap-2 text-base font-semibold text-white underline-offset-4 transition-colors hover:text-[#d18a62] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="inline-flex min-h-11 w-fit items-center gap-2 text-base font-semibold text-white underline-offset-4 transition-colors hover:text-[#d18a62] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             {t("viewAll")} <span aria-hidden="true">→</span>
           </Link>

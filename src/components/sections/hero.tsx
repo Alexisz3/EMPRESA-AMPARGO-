@@ -11,14 +11,14 @@ export async function Hero() {
   const t = await getTranslations("Hero");
 
   return (
-    <section className="overflow-hidden py-12 sm:py-20 lg:py-24">
+    <section className="overflow-hidden pb-12 pt-10 sm:py-20 lg:py-24">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[1.03fr_0.97fr] lg:gap-16">
+        <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[1.03fr_0.97fr] lg:gap-16">
           <div data-reveal="hero">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
               {t("eyebrow")}
             </p>
-            <h1 className="max-w-3xl text-[clamp(2.65rem,11.5vw,3rem)] font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-3xl text-[clamp(2.65rem,11.5vw,3rem)] font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-6xl xl:text-7xl">
               {t("title")}
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
@@ -41,7 +41,7 @@ export async function Hero() {
           </div>
 
           <div data-reveal="image">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#25302c] text-white shadow-2xl shadow-black/15 sm:aspect-[5/4] lg:aspect-[4/5]">
+            <div className="relative aspect-[16/11] overflow-hidden rounded-[2rem] bg-[#25302c] text-white shadow-2xl shadow-black/15 sm:aspect-[5/4] lg:aspect-[4/5]">
               <Image
                 src="/images/outdoor-kitchen-hero.jpeg"
                 alt={t("imageAlt")}
@@ -54,9 +54,9 @@ export async function Hero() {
           </div>
         </div>
 
-        <dl data-reveal className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:mt-12 sm:grid-cols-3 lg:mt-16">
-          {trustIndicators.map((indicator) => (
-            <div key={indicator} className="bg-background px-6 py-5 sm:px-7">
+        <dl data-reveal className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:mt-12 sm:grid-cols-3 lg:mt-16">
+          {trustIndicators.map((indicator, index) => (
+            <div key={indicator} className={`bg-background px-5 py-5 sm:px-7 ${index === 2 ? "col-span-2 sm:col-span-1" : ""}`}>
               <dd className="text-base font-semibold text-foreground">
                 {t(`trust.${indicator}.value`)}
               </dd>

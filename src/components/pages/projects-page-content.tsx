@@ -31,7 +31,7 @@ export async function ProjectsPageContent() {
       </section>
       <section className="py-16 sm:py-24 lg:py-32">
         <Container>
-          <div data-reveal className="mb-14 max-w-3xl sm:mb-28">
+          <div data-reveal className="mb-12 max-w-3xl sm:mb-28">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">{t("intro.eyebrow")}</p>
             <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">{t("intro.title")}</h2>
             <p className="mt-6 text-lg leading-8 text-muted">{t("intro.description")}</p>

@@ -68,17 +68,17 @@ export function ProjectsGallery({ groups, closeLabel, nextLabel, previousLabel, 
 
   return (
     <>
-      <div className="space-y-16 sm:space-y-24 lg:space-y-32">
+      <div className="space-y-14 sm:space-y-24 lg:space-y-32">
         {groups.map((group, groupIndex) => (
           <section key={group.title} aria-labelledby={`project-${groupIndex}`} data-reveal>
-            <div className="grid gap-6 border-t border-black/15 pt-7 md:grid-cols-[0.7fr_1.3fr] md:gap-12">
+            <div className="grid gap-4 border-t border-black/15 pt-6 md:grid-cols-[0.7fr_1.3fr] md:gap-12 md:pt-7">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{group.tag}</p>
               <div>
                 <h2 id={`project-${groupIndex}`} className="text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">{group.title}</h2>
-                <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">{group.description}</p>
+                <p className="mt-3 max-w-2xl text-base leading-7 text-muted sm:mt-4 sm:text-lg sm:leading-8">{group.description}</p>
               </div>
             </div>
-            <div data-reveal-group className={`mt-8 grid min-w-0 gap-4 sm:mt-10 md:grid-cols-2 ${group.images.length >= 3 ? "lg:grid-cols-12" : ""}`}>
+            <div data-reveal-group className={`mt-6 grid min-w-0 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-2 ${group.images.length >= 3 ? "grid-cols-2 lg:grid-cols-12" : ""}`}>
               {group.images.map((image, imageIndex) => (
                 <button
                   key={image.src}
@@ -88,12 +88,12 @@ export function ProjectsGallery({ groups, closeLabel, nextLabel, previousLabel, 
                   data-reveal
                   className={`project-media group relative min-w-0 overflow-hidden rounded-[1.5rem] bg-black/5 text-left transition-transform active:scale-[0.995] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground ${
                     group.images.length >= 3
-                      ? imageIndex === 0 ? "aspect-[16/10] sm:aspect-[4/3] lg:col-span-7 lg:row-span-2 lg:aspect-auto lg:min-h-[680px]" : "aspect-[16/10] sm:aspect-[4/3] lg:col-span-5 lg:aspect-auto lg:min-h-[332px]"
+                      ? imageIndex === 0 ? "col-span-2 aspect-[16/10] sm:aspect-[4/3] lg:col-span-7 lg:row-span-2 lg:aspect-auto lg:min-h-[680px]" : "aspect-[4/3] lg:col-span-5 lg:aspect-auto lg:min-h-[332px]"
                       : image.portrait ? "aspect-[4/5]" : "aspect-[16/10] sm:aspect-[4/3]"
                   }`}
                 >
                   <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1024px) 55vw, (min-width: 768px) 50vw, calc(100vw - 2.5rem)" className="object-cover" />
-                  <span className="absolute bottom-4 right-4 rounded-full bg-black/60 px-4 py-2 text-sm font-medium text-white backdrop-blur">{imageIndex + 1} / {group.images.length}</span>
+                  <span className="absolute bottom-3 right-3 rounded-full bg-black/60 px-3 py-1.5 text-sm font-medium text-white backdrop-blur sm:bottom-4 sm:right-4 sm:px-4 sm:py-2">{imageIndex + 1} / {group.images.length}</span>
                 </button>
               ))}
             </div>

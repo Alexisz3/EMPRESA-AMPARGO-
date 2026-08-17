@@ -6,9 +6,9 @@ export function FooterLocaleLinks({ label }: { label: string }) {
   const pathname = usePathname();
   return (
     <span className="flex items-center gap-2" aria-label={label}>
-      <Link href={pathname} locale="en" className="inline-flex min-h-11 items-center transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">English</Link>
+      <Link href={pathname} locale="en" scroll={false} className="inline-flex min-h-11 items-center transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">English</Link>
       <span aria-hidden="true">|</span>
-      <Link href={pathname} locale="es" className="inline-flex min-h-11 items-center transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Español</Link>
+      <Link href={pathname} locale="es" scroll={false} className="inline-flex min-h-11 items-center transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Español</Link>
     </span>
   );
 }

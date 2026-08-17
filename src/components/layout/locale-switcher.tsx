@@ -13,7 +13,7 @@ export function LocaleSwitcher() {
   const nextLocale: AppLocale = locale === "en" ? "es" : "en";
 
   function changeLocale() {
-    router.replace(pathname, { locale: nextLocale });
+    router.replace(pathname, { locale: nextLocale, scroll: false });
   }
 
   return (

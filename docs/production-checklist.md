@@ -5,7 +5,7 @@ The codebase is prepared for preproduction review. The following external depend
 ## Client and provider inputs
 
 - [ ] Confirm the final production domain.
-- [ ] Select and configure the hosting platform.
+- [x] Use Vercel for the current temporary deployment; the official production domain remains pending.
 - [ ] Deliver and approve the final AMPARGO logo and favicon assets.
 - [ ] Confirm the corporate email address.
 - [ ] Approve the Quote email/form delivery provider.
@@ -18,6 +18,13 @@ The codebase is prepared for preproduction review. The following external depend
 - [ ] Confirm or create the Google Business Profile.
 - [ ] Configure Google Search Console after domain verification.
 - [ ] Obtain final client review of English and Spanish copy, photographs, phone numbers and address.
+- [ ] Define additional-estimate/revision terms before publishing “Initial Estimate — Free.”
+- [ ] Obtain warranty terms and approved public wording.
+- [ ] Obtain insurance coverage details and approved public wording.
+- [ ] Obtain electrical, plumbing and other applicable license numbers, holders, scopes and validity.
+- [ ] Confirm financing availability and business hours.
+- [ ] Request at least three authorized testimonials.
+- [ ] Request authentic Before/After pairs of the same space from similar angles.
 
 ## Production verification
 
@@ -33,3 +40,16 @@ The codebase is prepared for preproduction review. The following external depend
 ## Current temporary assets
 
 - [ ] Replace the current temporary `src/app/favicon.ico` with the approved final favicon. No new logo or brand mark has been invented for preproduction.
+- [ ] Obtain or recreate the approved AMPARGO logo as a clean SVG or high-resolution PNG. The older business-card photograph remains reference material only.
+
+## Confirmed information not yet approved for broad public claims
+
+- Joe Andrade and Mario Parra are both primary contacts.
+- AMPARGO aims to respond within approximately 24 hours.
+- The initial estimate is free; additional estimates or revisions may involve additional cost, with exact terms pending.
+- AMPARGO can assist with permits when required; final public wording remains under review.
+- Warranty, insurance and applicable licenses are confirmed, but the supporting details and public wording remain pending.
+- Electrical and plumbing work are performed internally.
+- AMPARGO purchases and coordinates materials and may work with external architects or designers when project complexity requires it.
+
+See `docs/client-confirmed-information.md` for the complete source-of-truth record and publication restrictions.

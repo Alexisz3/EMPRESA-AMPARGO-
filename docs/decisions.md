@@ -114,3 +114,15 @@
 - Status: accepted; supersedes ADR-006 for the current implementation
 - Decision: Replace the two `motion.div` wrappers configured with `initial={false}` by ordinary server-rendered elements and remove Motion.
 - Reason: The wrappers produced no animation but still created a client boundary and shipped an animation library. CSS transitions and reduced-motion handling cover the interactions currently present.
+
+## ADR-017: Separate confirmed information from publishable claims
+
+- Status: accepted
+- Decision: Record new client confirmations in `docs/client-confirmed-information.md`, but do not publish incomplete estimate terms, warranties, insurance, licenses, credentials, testimonials, Before/After claims, financing, hours, or service areas beyond Houston.
+- Reason: Several facts are directionally confirmed but still require evidence, exact terms, authorized wording, or source material before they can be represented accurately in public marketing copy.
+
+## ADR-018: Keep temporary Vercel identity out of definitive SEO configuration
+
+- Status: accepted
+- Decision: Keep canonical, hreflang, sitemap, definitive JSON-LD, and Search Console prepared for environment-based activation, but do not use the temporary `*.vercel.app` URL as the official SEO origin.
+- Reason: The official domain is still pending, and publishing the temporary deployment as the definitive business identity would create avoidable migration and indexing work.

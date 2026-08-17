@@ -20,7 +20,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
 
   return (
     <>
-      <Header />
+      <Header activePage="about" />
       <main><AboutPageContent /></main>
       <Footer />
     </>

@@ -8,6 +8,7 @@ AMPARGO needs a bilingual corporate website for its remodeling and construction 
 
 - English-speaking homeowners in the Houston market.
 - Spanish-speaking homeowners in the Houston market.
+- Residential and commercial decision-makers evaluating remodeling or construction work in Houston.
 - Prospective clients evaluating AMPARGO's capabilities and previous work.
 
 ## Goals
@@ -27,7 +28,7 @@ AMPARGO needs a bilingual corporate website for its remodeling and construction 
 - Quote uploads accept at most 5 JPG, JPEG, PNG, or PDF files, with a 10 MB per-file limit and 25 MB combined limit. Client and server validation must agree on MIME type and extension, and the server must verify the file signature.
 - Quote delivery must not report success until an approved provider and recipient are configured and implemented.
 - The Quote form includes a honeypot and a 2.5-second minimum completion check. Production-grade distributed rate limiting remains dependent on the selected hosting environment.
-- Real client photography will be integrated after assets are supplied and approved.
+- Only approved real client photography may be presented as AMPARGO work.
 - Project content must be maintained locally in V1; no CMS is required.
 - No 3D configurator, renderer, or visualization module is included.
 
@@ -40,6 +41,7 @@ AMPARGO needs a bilingual corporate website for its remodeling and construction 
 - Prioritize Core Web Vitals, static rendering, and minimal client-side JavaScript.
 - Provide unique page titles and descriptions, localized canonical URLs, and language alternates before launch.
 - Do not publish claims, credentials, service areas, contact details, reviews, or statistics that the client has not approved.
+- Treat `docs/client-confirmed-information.md` as the current source of truth for confirmed client information, publishing restrictions, and pending evidence.
 
 ## Out of scope for V1
 
@@ -51,7 +53,7 @@ AMPARGO needs a bilingual corporate website for its remodeling and construction 
 ## Content needed before launch
 
 - Approved logo files and brand guidelines, if available.
-- Confirmed phone number, email address, service area, hours, and quote workflow.
+- Final corporate email, business hours, official domain, and approved quote workflow.
 - Final English source copy and reviewed Spanish translation.
 - Approved service list and project categories.
 - Real client photographs with usage permission and project context.

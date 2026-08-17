@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "homeTitle": "Remodeling & Construction in Houston",
-    "homeDescription": "AMPARGO provides remodeling and construction services for homeowners in Houston, Texas."
+    "homeTitle": "Remodeling & Construction in Houston | AMPARGO",
+    "homeDescription": "AMPARGO provides residential and commercial remodeling and construction services in Houston, Texas."
   },
   "Navigation": {
     "homeLabel": "AMPARGO home",
@@ -386,7 +386,7 @@
     "hero": { "eyebrow": "CONTACT", "title": "Let’s Talk About Your Project.", "description": "Have a remodeling or construction project in mind? Get in touch with AMPARGO in Houston." },
     "details": { "eyebrow": "GET IN TOUCH", "title": "Talk With Our Team.", "call": "Call", "whatsapp": "WhatsApp", "serviceArea": "Service Area", "address": "Address" },
     "cta": "Request an Estimate",
-    "map": { "title": "Map showing AMPARGO at 8027 Burning Hills Drive in Houston", "note": "Map provided through a standard Google Maps embed. No site API key is used." }
+    "map": { "title": "Map showing AMPARGO at 8027 Burning Hills Drive in Houston" }
   },
   "PrivacyPage": {
     "metadata": { "title": "Privacy Policy", "description": "Read how AMPARGO handles information submitted through this website." },

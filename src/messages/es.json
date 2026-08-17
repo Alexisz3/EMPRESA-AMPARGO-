@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "homeTitle": "Remodelación y construcción en Houston",
-    "homeDescription": "AMPARGO ofrece servicios de remodelación y construcción para propietarios de viviendas en Houston, Texas."
+    "homeTitle": "Remodelación y construcción en Houston | AMPARGO",
+    "homeDescription": "AMPARGO ofrece servicios residenciales y comerciales de remodelación y construcción en Houston, Texas."
   },
   "Navigation": {
     "homeLabel": "Inicio de AMPARGO",
@@ -24,10 +24,10 @@
   "Hero": {
     "eyebrow": "Remodelación y construcción · Houston, Texas",
     "title": "Transformamos espacios. Construimos lo que importa.",
-    "description": "Conoce los servicios de remodelación y construcción de AMPARGO, descubre proyectos reales y cuéntanos qué estás planeando.",
+    "description": "Conozca los servicios de remodelación y construcción de AMPARGO, descubra proyectos reales y cuéntenos qué está planificando.",
     "primaryCta": "Solicitar cotización",
     "secondaryCta": "Ver proyectos",
-    "imageAlt": "Cocina exterior terminada con parrilla de acero inoxidable, countertop de piedra, fregadero y patio cubierto.",
+    "imageAlt": "Cocina exterior terminada con parrilla de acero inoxidable, encimera de piedra, fregadero y patio cubierto.",
     "trust": {
       "experience": {
         "value": "Más de 30 años",
@@ -386,7 +386,7 @@
     "hero": { "eyebrow": "CONTACTO", "title": "Hablemos sobre su proyecto.", "description": "¿Tiene en mente un proyecto de remodelación o construcción? Comuníquese con AMPARGO en Houston." },
     "details": { "eyebrow": "CONTÁCTENOS", "title": "Hable con nuestro equipo.", "call": "Llamar", "whatsapp": "WhatsApp", "serviceArea": "Área de servicio", "address": "Dirección" },
     "cta": "Solicitar cotización",
-    "map": { "title": "Mapa de AMPARGO en 8027 Burning Hills Drive, Houston", "note": "Mapa proporcionado mediante una inserción estándar de Google Maps. El sitio no utiliza una clave de API." }
+    "map": { "title": "Mapa de AMPARGO en 8027 Burning Hills Drive, Houston" }
   },
   "PrivacyPage": {
     "metadata": { "title": "Política de privacidad", "description": "Conozca cómo AMPARGO maneja la información enviada mediante este sitio web." },

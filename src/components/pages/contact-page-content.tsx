@@ -51,7 +51,6 @@ export async function ContactPageContent() {
 
             <div data-reveal="image" className="overflow-hidden rounded-[2rem] border border-black/10 bg-[#e8e2d8]">
               <iframe title={t("map.title")} src="https://www.google.com/maps?q=8027%20Burning%20Hills%20Dr%2C%20Houston%2C%20TX%2077075&output=embed" className="h-[360px] w-full border-0 sm:h-[480px] lg:h-full lg:min-h-[680px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen />
-              <p className="border-t border-black/10 bg-surface px-6 py-4 text-sm leading-6 text-muted">{t("map.note")}</p>
             </div>
           </div>
         </Container>

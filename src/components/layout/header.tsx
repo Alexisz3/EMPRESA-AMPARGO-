@@ -12,7 +12,9 @@ const navigation = [
   { key: "contact", href: "/contact" },
 ] as const;
 
-export async function Header() {
+type NavigationKey = (typeof navigation)[number]["key"];
+
+export async function Header({ activePage }: { activePage?: NavigationKey } = {}) {
   const t = await getTranslations("Navigation");
 
   return (
@@ -31,7 +33,12 @@ export async function Header() {
             <Link
               key={item.key}
               href={item.href}
-            className="text-sm font-medium text-muted transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+              aria-current={activePage === item.key ? "page" : undefined}
+              className={`text-sm font-medium transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground ${
+                activePage === item.key
+                  ? "text-foreground underline decoration-accent decoration-2 underline-offset-8"
+                  : "text-muted"
+              }`}
             >
               {t(item.key)}
             </Link>
@@ -62,7 +69,10 @@ export async function Header() {
                 <Link
                   key={item.key}
                   href={item.href}
-                  className="rounded-lg px-3 py-3 text-base font-medium hover:bg-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  aria-current={activePage === item.key ? "page" : undefined}
+                  className={`rounded-lg px-3 py-3 text-base font-medium hover:bg-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+                    activePage === item.key ? "text-accent" : ""
+                  }`}
                 >
                   {t(item.key)}
                 </Link>

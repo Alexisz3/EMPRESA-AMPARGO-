@@ -24,7 +24,9 @@ Present AMPARGO as a capable, trustworthy local contractor through clear informa
 
 ## Visual direction status
 
-The final logo, colors, typography, and image treatment have not been approved in the local project context. Any current styling is a neutral technical placeholder and not a finalized identity.
+The current website color, typography, spacing, and image treatment form the approved working visual system. The final production logo and favicon remain pending.
+
+The client supplied a photograph of an older business card with a house symbol, the letters A/P, “General Remodeling,” and “Andrade Parra Corporation.” It is visual reference only. Do not use the card photograph as the production logo. The confirmed website brand remains AMPARGO, and any recreated or adapted mark requires approval.
 
 ## Photography guidelines for the next phase
 
@@ -37,7 +39,7 @@ The final logo, colors, typography, and image treatment have not been approved i
 ## Inputs still required
 
 - Vector or high-resolution logo.
-- Approved color and type specifications, if they exist.
+- Clean, approved AMPARGO logo and favicon assets in SVG or high-resolution PNG format.
 - Verified company description and differentiators.
-- Approved contact information, service area, credentials, and claims.
+- Evidence and approved wording for warranty, insurance, licenses, initial-estimate terms, and response-time claims.
 - Final photo archive and permission confirmation.

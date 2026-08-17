@@ -20,7 +20,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
 
   return (
     <>
-      <Header />
+      <Header activePage="services" />
       <main><ServicesPageContent /></main>
       <Footer />
     </>

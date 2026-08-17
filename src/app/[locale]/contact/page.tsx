@@ -17,5 +17,5 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ContactPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <><Header /><main><ContactPageContent /></main><Footer /></>;
+  return <><Header activePage="contact" /><main><ContactPageContent /></main><Footer /></>;
 }

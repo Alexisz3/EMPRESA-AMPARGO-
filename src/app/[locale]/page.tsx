@@ -10,7 +10,6 @@ import { Hero } from "@/components/sections/hero";
 import { ProjectTransformation } from "@/components/sections/project-transformation";
 import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
-import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { getLocalizedMetadata } from "@/lib/seo";
 
 type HomePageProps = {
@@ -39,7 +38,6 @@ export default async function HomePage({ params }: HomePageProps) {
         <FeaturedProjects />
         <About />
         <ProjectTransformation />
-        <WhyChooseUs />
         <Process />
         <FinalCta />
       </main>

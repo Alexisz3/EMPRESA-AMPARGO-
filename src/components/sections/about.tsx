@@ -5,6 +5,8 @@ import { Link } from "@/i18n/navigation";
 
 import { Container } from "../ui/container";
 
+const values = ["quality", "reliability", "versatility"] as const;
+
 export async function About() {
   const t = await getTranslations("About");
 
@@ -49,6 +51,31 @@ export async function About() {
               {t("cta")} <span aria-hidden="true">→</span>
             </Link>
           </div>
+        </div>
+
+        <div
+          data-about-values
+          data-reveal-group
+          className="mt-10 border-y border-black/10 sm:mt-14 sm:grid sm:grid-cols-3 lg:mt-16"
+        >
+          {values.map((value, index) => (
+            <article
+              key={value}
+              data-reveal
+              className={`grid grid-cols-[6.25rem_1fr] gap-5 py-5 sm:block sm:px-7 sm:py-7 lg:px-9 ${
+                index === 0
+                  ? "sm:pl-0 lg:pl-0"
+                  : "border-t border-black/10 sm:border-l sm:border-t-0"
+              }`}
+            >
+              <h3 className="text-lg font-semibold tracking-[-0.02em] sm:text-xl">
+                {t(`values.${value}.title`)}
+              </h3>
+              <p className="text-sm leading-6 text-muted sm:mt-3 sm:text-base sm:leading-7">
+                {t(`values.${value}.description`)}
+              </p>
+            </article>
+          ))}
         </div>
       </Container>
     </section>

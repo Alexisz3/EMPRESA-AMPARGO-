@@ -93,6 +93,11 @@ export function ProjectsGallery({ groups, closeLabel, nextLabel, previousLabel, 
                   }`}
                 >
                   <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1024px) 55vw, (min-width: 768px) 50vw, calc(100vw - 2.5rem)" className="object-cover" />
+                  <span
+                    data-project-overlay
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"
+                  />
                   <span className="absolute bottom-3 right-3 rounded-full bg-black/60 px-3 py-1.5 text-sm font-medium text-white backdrop-blur sm:bottom-4 sm:right-4 sm:px-4 sm:py-2">{imageIndex + 1} / {group.images.length}</span>
                 </button>
               ))}

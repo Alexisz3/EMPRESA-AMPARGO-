@@ -102,7 +102,21 @@
       "label": "Years of Experience"
     },
     "cta": "About AMPARGO",
-    "imageAlt": "Timber framing for a covered patio structure during construction."
+    "imageAlt": "Timber framing for a covered patio structure during construction.",
+    "values": {
+      "quality": {
+        "title": "Quality",
+        "description": "Careful workmanship and attention to the details that matter."
+      },
+      "reliability": {
+        "title": "Reliability",
+        "description": "Clear communication, realistic expectations and respect for your space."
+      },
+      "versatility": {
+        "title": "Versatility",
+        "description": "Residential and commercial work across a wide range of project types."
+      }
+    }
   },
   "ProjectTransformation": {
     "eyebrow": "PROJECT TRANSFORMATION",
@@ -116,29 +130,6 @@
       "roofing": {
         "label": "Roofing Progress",
         "imageAlt": "The same patio structure at a later stage with its roof installed."
-      }
-    }
-  },
-  "WhyChooseUs": {
-    "eyebrow": "WHY CHOOSE US",
-    "title": "Built on Experience. Focused on Quality.",
-    "description": "A clear, practical approach to remodeling and construction — with attention to communication, detail and dependable execution.",
-    "items": {
-      "experience": {
-        "title": "Experience",
-        "description": "Decades of practical remodeling and construction experience."
-      },
-      "quality": {
-        "title": "Quality",
-        "description": "Careful workmanship and attention to the details that matter."
-      },
-      "reliability": {
-        "title": "Reliability",
-        "description": "Clear communication, realistic expectations and respect for your space."
-      },
-      "versatility": {
-        "title": "Versatility",
-        "description": "Residential and commercial work across a wide range of project types."
       }
     }
   },

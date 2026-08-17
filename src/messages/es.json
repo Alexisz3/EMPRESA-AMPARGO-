@@ -102,7 +102,21 @@
       "label": "Años de experiencia"
     },
     "cta": "Conozca AMPARGO",
-    "imageAlt": "Estructura de madera para un patio cubierto durante su construcción."
+    "imageAlt": "Estructura de madera para un patio cubierto durante su construcción.",
+    "values": {
+      "quality": {
+        "title": "Calidad",
+        "description": "Trabajo cuidadoso y atención a los detalles que realmente importan."
+      },
+      "reliability": {
+        "title": "Confiabilidad",
+        "description": "Comunicación clara, expectativas realistas y respeto por su espacio."
+      },
+      "versatility": {
+        "title": "Versatilidad",
+        "description": "Trabajos residenciales y comerciales en una amplia variedad de proyectos."
+      }
+    }
   },
   "ProjectTransformation": {
     "eyebrow": "TRANSFORMACIÓN DEL PROYECTO",
@@ -116,29 +130,6 @@
       "roofing": {
         "label": "Avance de cubierta",
         "imageAlt": "La misma estructura de patio en una etapa posterior con el techo instalado."
-      }
-    }
-  },
-  "WhyChooseUs": {
-    "eyebrow": "POR QUÉ ELEGIRNOS",
-    "title": "Experiencia que se refleja en la calidad.",
-    "description": "Un enfoque claro y práctico para la remodelación y la construcción, con atención a la comunicación, los detalles y una ejecución confiable.",
-    "items": {
-      "experience": {
-        "title": "Experiencia",
-        "description": "Décadas de experiencia práctica en remodelación y construcción."
-      },
-      "quality": {
-        "title": "Calidad",
-        "description": "Trabajo cuidadoso y atención a los detalles que realmente importan."
-      },
-      "reliability": {
-        "title": "Confiabilidad",
-        "description": "Comunicación clara, expectativas realistas y respeto por su espacio."
-      },
-      "versatility": {
-        "title": "Versatilidad",
-        "description": "Trabajos residenciales y comerciales en una amplia variedad de proyectos."
       }
     }
   },

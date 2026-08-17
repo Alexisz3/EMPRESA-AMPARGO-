@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { LocaleScrollRestoration } from "@/components/layout/locale-navigation";
 import { MotionObserver } from "@/components/ui/motion-observer";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/seo";
@@ -56,7 +57,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-screen antialiased">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          {children}
+          <LocaleScrollRestoration />
+        </NextIntlClientProvider>
         <MotionObserver />
         <GoogleAnalytics />
       </body>

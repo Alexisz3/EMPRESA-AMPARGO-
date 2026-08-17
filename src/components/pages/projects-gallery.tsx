@@ -22,6 +22,8 @@ export function ProjectsGallery({ groups, closeLabel, nextLabel, previousLabel, 
   const [active, setActive] = useState<{ group: number; image: number } | null>(null);
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const touchStartRef = useRef<number | null>(null);
+  const touchEndRef = useRef<number | null>(null);
   const currentGroup = active ? groups[active.group] : null;
   const current = currentGroup && active ? currentGroup.images[active.image] : null;
 
@@ -34,6 +36,14 @@ export function ProjectsGallery({ groups, closeLabel, nextLabel, previousLabel, 
     setActive(null);
     window.requestAnimationFrame(() => lastTriggerRef.current?.focus());
   }, []);
+
+  const finishSwipe = () => {
+    if (touchStartRef.current === null || touchEndRef.current === null) return;
+    const distance = touchStartRef.current - touchEndRef.current;
+    if (Math.abs(distance) >= 48) move(distance > 0 ? 1 : -1);
+    touchStartRef.current = null;
+    touchEndRef.current = null;
+  };
 
   useEffect(() => {
     if (!active) return;
@@ -58,9 +68,9 @@ export function ProjectsGallery({ groups, closeLabel, nextLabel, previousLabel, 
 
   return (
     <>
-      <div className="space-y-24 sm:space-y-32">
+      <div className="space-y-16 sm:space-y-24 lg:space-y-32">
         {groups.map((group, groupIndex) => (
-          <section key={group.title} aria-labelledby={`project-${groupIndex}`}>
+          <section key={group.title} aria-labelledby={`project-${groupIndex}`} data-reveal>
             <div className="grid gap-6 border-t border-black/15 pt-7 md:grid-cols-[0.7fr_1.3fr] md:gap-12">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">{group.tag}</p>
               <div>
@@ -68,20 +78,21 @@ export function ProjectsGallery({ groups, closeLabel, nextLabel, previousLabel, 
                 <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">{group.description}</p>
               </div>
             </div>
-            <div className={`mt-10 grid min-w-0 gap-4 md:grid-cols-2 ${group.images.length >= 3 ? "lg:grid-cols-12" : ""}`}>
+            <div data-reveal-group className={`mt-8 grid min-w-0 gap-4 sm:mt-10 md:grid-cols-2 ${group.images.length >= 3 ? "lg:grid-cols-12" : ""}`}>
               {group.images.map((image, imageIndex) => (
                 <button
                   key={image.src}
                   type="button"
                   onClick={(event) => { lastTriggerRef.current = event.currentTarget; setActive({ group: groupIndex, image: imageIndex }); }}
                   aria-label={`${openLabel}: ${image.alt}`}
-                  className={`group relative min-w-0 overflow-hidden rounded-[1.5rem] bg-black/5 text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground ${
+                  data-reveal
+                  className={`project-media group relative min-w-0 overflow-hidden rounded-[1.5rem] bg-black/5 text-left transition-transform active:scale-[0.995] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground ${
                     group.images.length >= 3
-                      ? imageIndex === 0 ? "aspect-[4/3] lg:col-span-7 lg:row-span-2 lg:aspect-auto lg:min-h-[680px]" : "aspect-[4/3] lg:col-span-5 lg:aspect-auto lg:min-h-[332px]"
-                      : image.portrait ? "aspect-[4/5]" : "aspect-[4/3]"
+                      ? imageIndex === 0 ? "aspect-[16/10] sm:aspect-[4/3] lg:col-span-7 lg:row-span-2 lg:aspect-auto lg:min-h-[680px]" : "aspect-[16/10] sm:aspect-[4/3] lg:col-span-5 lg:aspect-auto lg:min-h-[332px]"
+                      : image.portrait ? "aspect-[4/5]" : "aspect-[16/10] sm:aspect-[4/3]"
                   }`}
                 >
-                  <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1024px) 55vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 lg:group-hover:scale-[1.025]" />
+                  <Image src={image.src} alt={image.alt} fill sizes="(min-width: 1024px) 55vw, (min-width: 768px) 50vw, calc(100vw - 2.5rem)" className="object-cover" />
                   <span className="absolute bottom-4 right-4 rounded-full bg-black/60 px-4 py-2 text-sm font-medium text-white backdrop-blur">{imageIndex + 1} / {group.images.length}</span>
                 </button>
               ))}
@@ -91,18 +102,28 @@ export function ProjectsGallery({ groups, closeLabel, nextLabel, previousLabel, 
       </div>
 
       {active && current ? (
-        <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={currentGroup?.title} className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 sm:p-8" onMouseDown={(event) => { if (event.target === event.currentTarget) closeLightbox(); }}>
-          <button autoFocus type="button" onClick={closeLightbox} aria-label={closeLabel} className="absolute right-4 top-4 z-10 rounded-full border border-white/25 bg-black/40 px-5 py-3 text-sm font-semibold text-white sm:right-7 sm:top-7">{closeLabel} <span aria-hidden="true">×</span></button>
+        <div
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={currentGroup?.title}
+          className="fixed inset-0 z-50 flex touch-pan-y items-center justify-center bg-black/95 p-4 sm:p-8"
+          onMouseDown={(event) => { if (event.target === event.currentTarget) closeLightbox(); }}
+          onTouchStart={(event) => { touchStartRef.current = event.touches[0]?.clientX ?? null; touchEndRef.current = null; }}
+          onTouchMove={(event) => { touchEndRef.current = event.touches[0]?.clientX ?? null; }}
+          onTouchEnd={finishSwipe}
+        >
+          <button autoFocus type="button" onClick={closeLightbox} aria-label={closeLabel} className="absolute right-4 top-4 z-10 inline-flex min-h-12 items-center rounded-full border border-white/25 bg-black/55 px-5 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:right-7 sm:top-7">{closeLabel} <span aria-hidden="true">&times;</span></button>
           {currentGroup && currentGroup.images.length > 1 ? (
             <>
-              <button type="button" onClick={() => move(-1)} aria-label={previousLabel} className="absolute left-3 z-10 grid size-12 place-items-center rounded-full border border-white/25 bg-black/40 text-2xl text-white sm:left-7">←</button>
-              <button type="button" onClick={() => move(1)} aria-label={nextLabel} className="absolute right-3 z-10 grid size-12 place-items-center rounded-full border border-white/25 bg-black/40 text-2xl text-white sm:right-7">→</button>
+              <button type="button" onClick={() => move(-1)} aria-label={previousLabel} className="absolute bottom-4 left-4 z-10 grid size-12 place-items-center rounded-full border border-white/25 bg-black/55 text-2xl text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:bottom-auto sm:left-7">&larr;</button>
+              <button type="button" onClick={() => move(1)} aria-label={nextLabel} className="absolute bottom-4 right-4 z-10 grid size-12 place-items-center rounded-full border border-white/25 bg-black/55 text-2xl text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:bottom-auto sm:right-7">&rarr;</button>
             </>
           ) : null}
-          <div className="relative h-[82vh] w-[88vw] max-w-6xl">
+          <div className="relative h-[72svh] w-[calc(100vw-2rem)] max-w-6xl sm:h-[82vh] sm:w-[88vw]">
             <Image src={current.src} alt={current.alt} fill sizes="90vw" className="object-contain" priority />
           </div>
-          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center text-sm text-white/75">{currentGroup?.title} · {active.image + 1} / {currentGroup?.images.length}</p>
+          <p className="absolute bottom-6 left-1/2 max-w-[58vw] -translate-x-1/2 text-center text-sm text-white/75 sm:bottom-4 sm:max-w-none">{currentGroup?.title} &middot; {active.image + 1} / {currentGroup?.images.length}</p>
         </div>
       ) : null}
     </>

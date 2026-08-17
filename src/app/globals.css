@@ -29,6 +29,103 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+[data-reveal] {
+  opacity: 1;
+}
+
+.motion-enhanced [data-reveal][data-reveal-ready="true"] {
+  --reveal-delay: 0ms;
+  --reveal-distance: 8px;
+  --reveal-duration: 540ms;
+  opacity: 1;
+  transform: translate3d(0, var(--reveal-distance), 0);
+  transition: transform var(--reveal-duration) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+  will-change: transform;
+}
+
+.motion-enhanced [data-reveal="hero"][data-reveal-ready="true"],
+.motion-enhanced [data-reveal="image"][data-reveal-ready="true"] {
+  --reveal-distance: 6px;
+  --reveal-duration: 620ms;
+}
+
+.motion-enhanced [data-reveal][data-reveal-visible="true"] {
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+[data-reveal-group] > [data-reveal]:nth-child(2) {
+  --reveal-delay: 55ms;
+}
+
+[data-reveal-group] > [data-reveal]:nth-child(3) {
+  --reveal-delay: 110ms;
+}
+
+[data-reveal-group] > [data-reveal]:nth-child(4) {
+  --reveal-delay: 165ms;
+}
+
+[data-reveal-group] > [data-reveal]:nth-child(5) {
+  --reveal-delay: 220ms;
+}
+
+.motion-button {
+  transition-duration: 280ms;
+  transition-property: background-color, border-color, color, transform;
+  transition-timing-function: ease-out;
+}
+
+.motion-button:active {
+  transform: translateY(1px);
+}
+
+.service-card {
+  transition: border-color 300ms ease-out, box-shadow 300ms ease-out, transform 300ms ease-out;
+}
+
+.project-media img,
+.project-media [data-project-overlay] {
+  transition-duration: 520ms;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu-panel {
+  transform-origin: top right;
+}
+
+.mobile-menu[open] .mobile-menu-panel {
+  animation: mobile-menu-in 180ms ease-out both;
+}
+
+@keyframes mobile-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    border-color: rgb(163 91 53 / 0.22);
+    box-shadow: 0 18px 45px rgb(29 37 34 / 0.08);
+    transform: translateY(-3px);
+  }
+
+  .project-media:hover img {
+    transform: scale(1.03);
+  }
+
+  .project-media:hover [data-project-overlay] {
+    opacity: 0.9;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -37,5 +134,14 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .motion-enhanced [data-reveal][data-reveal-ready="true"] {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .mobile-menu[open] .mobile-menu-panel {
+    animation: none !important;
   }
 }

@@ -69,7 +69,7 @@ export function EstimateForm() {
   ) : null;
 
   return (
-    <form noValidate onSubmit={handleSubmit} className="rounded-[2rem] border border-black/10 bg-surface p-6 shadow-[0_24px_70px_rgba(29,37,34,0.08)] sm:p-10">
+    <form data-reveal noValidate onSubmit={handleSubmit} className="rounded-[1.5rem] border border-black/10 bg-surface p-5 shadow-[0_24px_70px_rgba(29,37,34,0.08)] sm:rounded-[2rem] sm:p-10">
       <div className="absolute -left-[10000px] top-auto size-px overflow-hidden" aria-hidden="true">
         <label htmlFor="website">Website</label>
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
@@ -122,7 +122,7 @@ export function EstimateForm() {
         </div>
         <div className="sm:col-span-2">
           <label className={labelClass} htmlFor="files">{t("fields.files")}</label>
-          <input className="mt-2 block min-h-12 w-full cursor-pointer rounded-xl border border-dashed border-black/20 bg-background px-4 py-3 text-sm file:mr-4 file:rounded-full file:border-0 file:bg-foreground file:px-4 file:py-2 file:font-semibold file:text-white hover:border-accent focus:outline-2 focus:outline-offset-2 focus:outline-accent" id="files" name="files" type="file" multiple accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf" aria-invalid={Boolean(errors.files)} aria-describedby={errors.files ? "files-error" : "files-help"} onChange={() => clearError("files")} />
+          <input className="mt-2 block min-h-12 w-full cursor-pointer rounded-xl border border-dashed border-black/20 bg-background px-3 py-3 text-base file:mr-3 file:rounded-full file:border-0 file:bg-foreground file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:border-accent focus:outline-2 focus:outline-offset-2 focus:outline-accent sm:px-4" id="files" name="files" type="file" multiple accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf" aria-invalid={Boolean(errors.files)} aria-describedby={errors.files ? "files-error" : "files-help"} onChange={() => clearError("files")} />
           <p id="files-help" className="mt-2 text-sm leading-6 text-muted">{t("fileHelp")}</p>
           {fieldError("files")}
         </div>
@@ -131,7 +131,7 @@ export function EstimateForm() {
       <p className="mt-7 text-sm leading-6 text-muted">{t.rich("privacyNote", { privacy: (chunks) => <Link href="/privacy" className="font-semibold text-foreground underline underline-offset-4">{chunks}</Link> })}</p>
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-        <button type="submit" disabled={status === "loading"} className="inline-flex min-h-12 items-center justify-center rounded-full bg-foreground px-8 text-base font-semibold text-white transition hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-65 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent">
+        <button type="submit" disabled={status === "loading"} className="motion-button inline-flex min-h-12 w-full items-center justify-center rounded-full bg-foreground px-8 text-base font-semibold text-white hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-65 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-accent sm:w-auto">
           {status === "loading" ? t("submitting") : t("submit")}
         </button>
         <p className="text-sm text-muted"><span className="text-accent" aria-hidden="true">*</span> {t("requiredNote")}</p>

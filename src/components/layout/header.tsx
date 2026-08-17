@@ -31,7 +31,7 @@ export async function Header() {
             <Link
               key={item.key}
               href={item.href}
-              className="text-sm font-medium text-muted transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
+            className="text-sm font-medium text-muted transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-foreground"
             >
               {t(item.key)}
             </Link>
@@ -42,27 +42,27 @@ export async function Header() {
           <LocaleSwitcher />
           <Link
             href="/quote"
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-foreground px-6 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+            className="motion-button inline-flex min-h-11 items-center justify-center rounded-full bg-foreground px-6 text-sm font-semibold text-background hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
           >
             {t("quote")}
           </Link>
         </div>
 
-        <details className="group relative lg:hidden">
-          <summary className="flex min-h-11 cursor-pointer list-none items-center gap-3 rounded-full border border-black/15 px-4 text-sm font-semibold [&::-webkit-details-marker]:hidden">
+        <details className="mobile-menu group relative lg:hidden">
+          <summary className="flex min-h-12 cursor-pointer list-none items-center gap-3 rounded-full border border-black/15 px-4 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground [&::-webkit-details-marker]:hidden">
             <span>{t("menu")}</span>
             <span className="relative h-3.5 w-4" aria-hidden="true">
               <span className="absolute left-0 top-0 h-px w-4 bg-current transition-transform group-open:translate-y-[6px] group-open:rotate-45" />
               <span className="absolute bottom-0 left-0 h-px w-4 bg-current transition-transform group-open:-translate-y-[7px] group-open:-rotate-45" />
             </span>
           </summary>
-          <div className="absolute right-0 top-14 w-[min(20rem,calc(100vw-2.5rem))] rounded-2xl border border-black/10 bg-surface p-4 shadow-xl">
+          <div className="mobile-menu-panel absolute right-0 top-14 w-[min(20rem,calc(100vw-2.5rem))] rounded-2xl border border-black/10 bg-surface p-4 shadow-xl">
             <nav className="grid" aria-label={t("mobileLabel")}>
               {navigation.map((item) => (
                 <Link
                   key={item.key}
                   href={item.href}
-                  className="rounded-lg px-3 py-3 text-base font-medium hover:bg-background"
+                  className="rounded-lg px-3 py-3 text-base font-medium hover:bg-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   {t(item.key)}
                 </Link>
@@ -72,7 +72,7 @@ export async function Header() {
               <LocaleSwitcher />
               <Link
                 href="/quote"
-                className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-foreground px-5 text-sm font-semibold text-background"
+                className="motion-button inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-foreground px-5 text-sm font-semibold text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
               >
                 {t("quote")}
               </Link>

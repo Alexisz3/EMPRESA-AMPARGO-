@@ -29,12 +29,12 @@ export async function ServicesPageContent() {
 
   return (
     <>
-      <section className="bg-foreground py-20 text-background sm:py-24 lg:py-28">
+      <section className="bg-foreground py-16 text-background sm:py-24 lg:py-28">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-16">
+          <div data-reveal="hero" className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-16">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">{t("hero.eyebrow")}</p>
-              <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+              <h1 className="mt-5 max-w-4xl text-[clamp(2.2rem,9.8vw,3rem)] font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
                 {t("hero.title")}
               </h1>
             </div>
@@ -43,10 +43,10 @@ export async function ServicesPageContent() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24 lg:py-32">
-        <Container className="grid gap-20 lg:gap-28">
+      <section className="py-16 sm:py-24 lg:py-32">
+        <Container className="grid gap-16 sm:gap-20 lg:gap-28">
           {categories.map((category, index) => (
-            <article id={category.anchor} key={category.key} className="scroll-mt-24 grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
+            <article id={category.anchor} key={category.key} data-reveal className="scroll-mt-24 grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-20">
               <div
                 className={`relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#e8e2d8] ${
                   index % 2 === 1 ? "lg:order-2" : ""
@@ -57,7 +57,7 @@ export async function ServicesPageContent() {
                     src={category.image}
                     alt={t(`categories.${category.key}.imageAlt`)}
                     fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    sizes="(min-width: 1024px) 50vw, calc(100vw - 2.5rem)"
                     className={`object-cover ${
                       category.key === "construction" ? "object-[50%_48%]" : "object-center"
                     }`}

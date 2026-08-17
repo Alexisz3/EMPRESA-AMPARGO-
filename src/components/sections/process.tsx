@@ -8,9 +8,9 @@ export async function Process() {
   const t = await getTranslations("Process");
 
   return (
-    <section id="process" className="py-20 sm:py-24 lg:py-32">
+    <section id="process" className="py-16 sm:py-24 lg:py-32">
       <Container>
-        <div className="grid gap-7 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-16">
+        <div data-reveal className="grid gap-7 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-16">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
               {t("eyebrow")}
@@ -24,16 +24,16 @@ export async function Process() {
           </p>
         </div>
 
-        <ol data-process-grid className="mt-12 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-5">
+        <ol data-process-grid data-reveal-group className="mt-12 grid gap-x-6 gap-y-7 sm:grid-cols-2 sm:gap-y-10 lg:mt-16 lg:grid-cols-5">
           {steps.map((step, index) => (
-            <li key={step} className="border-t border-black/15 pt-6">
+            <li key={step} data-reveal className="border-t border-black/15 pt-5 sm:pt-6">
               <span className="text-sm font-semibold tracking-[0.16em] text-accent">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-5 text-xl font-semibold tracking-[-0.02em]">
+              <h3 className="mt-4 text-xl font-semibold tracking-[-0.02em] sm:mt-5">
                 {t(`steps.${step}.title`)}
               </h3>
-              <p className="mt-3 leading-7 text-muted">
+              <p className="mt-2 leading-7 text-muted sm:mt-3">
                 {t(`steps.${step}.description`)}
               </p>
             </li>

@@ -8,9 +8,9 @@ export async function WhyChooseUs() {
   const t = await getTranslations("WhyChooseUs");
 
   return (
-    <section id="why-choose-us" className="py-20 sm:py-24 lg:py-28">
+    <section id="why-choose-us" className="py-16 sm:py-24 lg:py-28">
       <Container>
-        <div className="grid gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:items-end lg:gap-16">
+        <div data-reveal className="grid gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:items-end lg:gap-16">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
               {t("eyebrow")}
@@ -24,9 +24,9 @@ export async function WhyChooseUs() {
           </p>
         </div>
 
-        <div data-reasons-grid className="mt-12 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+        <div data-reasons-grid data-reveal-group className="mt-12 grid gap-x-6 gap-y-8 md:grid-cols-2 lg:mt-16 lg:grid-cols-4">
           {reasons.map((reason, index) => (
-            <article key={reason} className="border-t border-black/15 pt-6">
+            <article key={reason} data-reveal className="border-t border-black/15 pt-6">
               <span className="text-sm font-semibold tracking-[0.16em] text-accent">
                 {String(index + 1).padStart(2, "0")}
               </span>

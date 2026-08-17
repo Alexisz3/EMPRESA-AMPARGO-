@@ -58,9 +58,9 @@ export async function Services() {
   const t = await getTranslations("Services");
 
   return (
-    <section id="services" className="py-20 sm:py-24 lg:py-32">
+    <section id="services" className="py-16 sm:py-24 lg:py-32">
       <Container>
-        <div className="grid gap-7 lg:grid-cols-[0.92fr_1.08fr] lg:items-end lg:gap-16">
+        <div data-reveal className="grid gap-7 lg:grid-cols-[0.92fr_1.08fr] lg:items-end lg:gap-16">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
               {t("eyebrow")}
@@ -76,20 +76,22 @@ export async function Services() {
 
         <div
           data-services-grid
+          data-reveal-group
           className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4 lg:mt-16"
         >
           {services.map((service) => (
             <article
               key={service.key}
-              className="flex min-w-0 flex-col overflow-hidden rounded-[1.5rem] border border-black/10 bg-surface"
+              data-reveal
+              className="service-card flex min-w-0 flex-col overflow-hidden rounded-[1.5rem] border border-black/10 bg-surface"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-[#e8e2d8]">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#e8e2d8] sm:aspect-[4/3]">
                 {"image" in service ? (
                   <Image
                     src={service.image}
                     alt={t(`items.${service.key}.imageAlt`)}
                     fill
-                    sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                    sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, calc(100vw - 2.5rem)"
                     className={`object-cover ${service.imagePosition}`}
                   />
                 ) : (
@@ -109,7 +111,7 @@ export async function Services() {
                 </p>
                 <Link
                   href={`/services#${serviceAnchors[service.key]}`}
-                  className="mt-7 inline-flex w-fit items-center gap-2 text-sm font-semibold text-foreground underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                  className="mt-7 inline-flex min-h-11 w-fit items-center gap-2 text-sm font-semibold text-foreground underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                 >
                   {t("explore")} <span aria-hidden="true">→</span>
                 </Link>

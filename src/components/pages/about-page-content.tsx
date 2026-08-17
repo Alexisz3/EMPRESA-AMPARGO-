@@ -19,21 +19,21 @@ export async function AboutPageContent() {
 
   return (
     <>
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-14 sm:py-20 lg:py-24">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
-            <div>
+            <div data-reveal="hero">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
                 {t("hero.eyebrow")}
               </p>
-              <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+              <h1 className="mt-5 max-w-3xl text-[clamp(2.65rem,11.5vw,3rem)] font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
                 {t("hero.title")}
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
                 {t("hero.description")}
               </p>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#ded8cc] sm:aspect-[16/10] lg:aspect-[4/5]">
+            <div data-reveal="image" className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#ded8cc] sm:aspect-[16/10] lg:aspect-[4/5]">
               <Image
                 src="/images/about/pool-construction-progress.jpeg"
                 alt={t("hero.imageAlt")}
@@ -49,7 +49,7 @@ export async function AboutPageContent() {
 
       <section className="border-y border-black/10 py-16 sm:py-20">
         <Container>
-          <div className="grid gap-8 md:grid-cols-[0.42fr_1fr] md:items-center lg:gap-20">
+          <div data-reveal className="grid gap-8 md:grid-cols-[0.42fr_1fr] md:items-center lg:gap-20">
             <div className="flex items-end gap-5">
               <span className="text-7xl font-semibold leading-none tracking-[-0.06em] text-accent lg:text-8xl">
                 30+
@@ -65,9 +65,9 @@ export async function AboutPageContent() {
         </Container>
       </section>
 
-      <section className="bg-foreground py-20 text-background sm:py-24 lg:py-28">
+      <section className="bg-foreground py-16 text-background sm:py-24 lg:py-28">
         <Container>
-          <div className="max-w-3xl">
+          <div data-reveal className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">
               {t("approach.eyebrow")}
             </p>
@@ -78,9 +78,9 @@ export async function AboutPageContent() {
               {t("approach.description")}
             </p>
           </div>
-          <div className="mt-12 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+          <div data-reveal-group className="mt-12 grid gap-x-6 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:mt-16 lg:grid-cols-4">
             {approachItems.map((item, index) => (
-              <article key={item} className="border-t border-white/20 pt-6">
+              <article key={item} data-reveal className="border-t border-white/20 pt-6">
                 <span className="text-sm font-semibold tracking-[0.16em] text-[#d18a62]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -92,9 +92,9 @@ export async function AboutPageContent() {
         </Container>
       </section>
 
-      <section className="py-20 sm:py-24 lg:py-28">
+      <section className="py-16 sm:py-24 lg:py-28">
         <Container>
-          <div className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-16">
+          <div data-reveal className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-16">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
                 {t("values.eyebrow")}
@@ -105,9 +105,9 @@ export async function AboutPageContent() {
             </div>
             <p className="max-w-2xl text-lg leading-8 text-muted">{t("values.description")}</p>
           </div>
-          <div className="mt-12 grid gap-x-6 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+          <div data-reveal-group className="mt-12 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((value) => (
-              <article key={value} className="border-t border-black/15 pt-6">
+              <article key={value} data-reveal className="border-t border-black/15 pt-6">
                 <h3 className="text-xl font-semibold">{t(`values.items.${value}.title`)}</h3>
                 <p className="mt-3 leading-7 text-muted">{t(`values.items.${value}.description`)}</p>
               </article>
@@ -116,23 +116,26 @@ export async function AboutPageContent() {
         </Container>
       </section>
 
-      <section className="bg-[#ece7dd] py-20 sm:py-24 lg:py-28">
+      <section className="bg-[#ece7dd] py-16 sm:py-24 lg:py-28">
         <Container>
+          <div data-reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">{t("work.eyebrow")}</p>
           <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl">
             {t("work.title")}
           </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:h-[650px] lg:grid-cols-12 lg:grid-rows-2">
+          </div>
+          <div data-reveal-group className="mt-12 grid gap-4 md:grid-cols-2 lg:h-[650px] lg:grid-cols-12 lg:grid-rows-2">
             {workImages.map((image) => (
               <figure
                 key={image.key}
-                className={`relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-black/10 lg:aspect-auto ${image.className}`}
+                data-reveal="image"
+                className={`relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-black/10 sm:aspect-[4/3] lg:aspect-auto ${image.className}`}
               >
                 <Image
                   src={image.src}
                   alt={t(`work.images.${image.key}`)}
                   fill
-                  sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, calc(100vw - 2.5rem)"
                   className="object-cover"
                 />
               </figure>

@@ -24,16 +24,17 @@ function ProjectImage({
 }: ProjectImageProps) {
   return (
     <figure
-      className={`group relative min-h-0 overflow-hidden rounded-[1.5rem] bg-black/20 ${className}`}
+      data-reveal
+      className={`project-media group relative min-h-0 overflow-hidden rounded-[1.5rem] bg-black/20 ${className}`}
     >
       <Image
         src={src}
         alt={alt}
         fill
         sizes={sizes}
-        className={`object-cover transition-transform duration-500 ease-out lg:group-hover:scale-[1.025] ${imageClassName}`}
+        className={`object-cover ${imageClassName}`}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
+      <div data-project-overlay className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
       <figcaption className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
         <span className="text-lg font-semibold tracking-[-0.015em] text-white sm:text-xl">
           {label}
@@ -47,9 +48,9 @@ export async function FeaturedProjects() {
   const t = await getTranslations("FeaturedProjects");
 
   return (
-    <section id="featured-projects" className="bg-foreground py-20 text-background sm:py-24 lg:py-32">
+    <section id="featured-projects" className="bg-foreground py-16 text-background sm:py-24 lg:py-32">
       <Container>
-        <div className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-12">
+        <div data-reveal className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-12">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">
               {t("eyebrow")}
@@ -69,7 +70,7 @@ export async function FeaturedProjects() {
           </Link>
         </div>
 
-        <div data-projects-grid className="mt-12 grid gap-4 md:grid-cols-2 lg:mt-16 lg:h-[720px] lg:grid-cols-12 lg:grid-rows-2">
+        <div data-projects-grid data-reveal-group className="mt-12 grid gap-4 md:grid-cols-2 lg:mt-16 lg:h-[720px] lg:grid-cols-12 lg:grid-rows-2">
           <ProjectImage
             src="/images/projects/outdoor-kitchen.jpeg"
             alt={t("items.outdoorKitchen.imageAlt")}

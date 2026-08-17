@@ -20,7 +20,7 @@ export function LocaleSwitcher() {
     <button
       type="button"
       onClick={changeLocale}
-      className="inline-flex min-h-11 items-center rounded-full border border-black/15 px-4 text-sm font-semibold transition-colors hover:border-foreground hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
+      className="motion-button inline-flex min-h-12 items-center rounded-full border border-black/15 px-4 text-sm font-semibold hover:border-foreground hover:bg-foreground hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground lg:min-h-11"
       aria-label={t("label", { language: t(nextLocale) })}
     >
       {nextLocale.toUpperCase()}

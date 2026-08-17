@@ -9,10 +9,10 @@ export async function About() {
   const t = await getTranslations("About");
 
   return (
-    <section id="about" className="py-20 sm:py-24 lg:py-32">
+    <section id="about" className="py-16 sm:py-24 lg:py-32">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-20">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#ded8cc] sm:aspect-[16/10] lg:aspect-[4/5]">
+          <div data-reveal="image" className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-[#ded8cc] sm:aspect-[16/10] lg:aspect-[4/5]">
             <Image
               src="/images/about/timber-patio-framing.jpeg"
               alt={t("imageAlt")}
@@ -22,7 +22,7 @@ export async function About() {
             />
           </div>
 
-          <div>
+          <div data-reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
               {t("eyebrow")}
             </p>

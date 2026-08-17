@@ -8,9 +8,9 @@ export async function FinalCta() {
   const t = await getTranslations("FinalCta");
 
   return (
-    <section className="bg-foreground py-20 text-background sm:py-24 lg:py-28">
+    <section className="bg-foreground py-16 text-background sm:py-24 lg:py-28">
       <Container>
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#27312e] px-6 py-16 sm:px-12 sm:py-20 lg:px-20 lg:py-24">
+        <div data-reveal className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#27312e] px-6 py-14 sm:px-12 sm:py-20 lg:px-20 lg:py-24">
           <div aria-hidden="true" className="absolute -right-24 -top-24 size-80 rounded-full border border-white/10" />
           <div aria-hidden="true" className="absolute -bottom-40 -left-24 size-96 rounded-full border border-[#d18a62]/25" />
 
@@ -27,13 +27,13 @@ export async function FinalCta() {
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/quote"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-7 text-base font-semibold text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="motion-button inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-7 text-base font-semibold text-white hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 {t("primaryCta")}
               </Link>
               <a
                 href="tel:+18327940720"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-7 text-base font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="motion-button inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-7 text-base font-semibold text-white hover:border-white hover:bg-white hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 {t("secondaryCta")}
               </a>

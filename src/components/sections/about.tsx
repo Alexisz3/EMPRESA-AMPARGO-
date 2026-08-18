@@ -36,8 +36,12 @@ export async function About() {
             </p>
 
             <div className="mt-10 flex items-end gap-5 border-y border-black/10 py-7 sm:gap-7">
-              <span className="text-6xl font-semibold leading-none tracking-[-0.06em] text-accent sm:text-7xl">
-                {t("stat.value")}
+              <span
+                data-reveal
+                className="reveal-line text-6xl font-semibold leading-none tracking-[-0.06em] text-accent sm:text-7xl"
+                style={{ "--line-delay": "100ms", "--line-distance": "24px", "--line-duration": "600ms" } as React.CSSProperties}
+              >
+                <span>{t("stat.value")}</span>
               </span>
               <span className="max-w-32 pb-1 text-base font-semibold leading-6 text-foreground">
                 {t("stat.label")}
@@ -57,6 +61,7 @@ export async function About() {
           data-about-values
           data-reveal-group
           className="mt-10 border-y border-black/10 sm:mt-14 sm:grid sm:grid-cols-3 lg:mt-16"
+          style={{ "--reveal-distance": "16px" } as React.CSSProperties}
         >
           {values.map((value, index) => (
             <article

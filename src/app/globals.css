@@ -43,10 +43,22 @@ body {
   will-change: transform;
 }
 
-.motion-enhanced [data-reveal="hero"][data-reveal-ready="true"],
+/* reveal-line wrapper: the inner <span> animates, not the wrapper itself */
+.motion-enhanced [data-reveal].reveal-line[data-reveal-ready="true"],
+/* arch-lines: transform-only, wrapper is the element */
+.motion-enhanced [data-reveal].arch-line-h[data-reveal-ready="true"],
+.motion-enhanced [data-reveal].arch-line-v[data-reveal-ready="true"],
+/* hero image: scale handled by hero-image-enter, not base reveal */
 .motion-enhanced [data-reveal="image"][data-reveal-ready="true"] {
-  --reveal-distance: 6px;
-  --reveal-duration: 620ms;
+  transform: none;
+  transition: none;
+  will-change: auto;
+  opacity: 1;
+}
+
+.motion-enhanced [data-reveal="hero"][data-reveal-ready="true"] {
+  --reveal-distance: 14px;
+  --reveal-duration: 520ms;
 }
 
 .motion-enhanced [data-reveal][data-reveal-visible="true"] {
@@ -135,6 +147,118 @@ body {
   }
 }
 
+/* ─── Reveal by line ─────────────────────────────────────── */
+/* Wrapper must have overflow:hidden; inner <span> animates   */
+.reveal-line {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-line > span {
+  display: block;
+  transform: translateY(var(--line-distance, 32px));
+  opacity: 0;
+  transition:
+    transform var(--line-duration, 640ms) cubic-bezier(0.22, 1, 0.36, 1) var(--line-delay, 0ms),
+    opacity calc(var(--line-duration, 640ms) * 0.6) ease var(--line-delay, 0ms);
+}
+
+/* Triggered when the .reveal-line wrapper itself gets data-reveal-visible */
+.motion-enhanced .reveal-line[data-reveal-visible="true"] > span {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ─── Architectural lines ────────────────────────────────── */
+.arch-line-h {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 780ms cubic-bezier(0.22, 1, 0.36, 1) var(--line-delay, 150ms);
+}
+
+.arch-line-v {
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: transform 860ms cubic-bezier(0.22, 1, 0.36, 1) var(--line-delay, 300ms);
+}
+
+.motion-enhanced .arch-line-h[data-reveal-visible="true"],
+.motion-enhanced .arch-line-v[data-reveal-visible="true"] {
+  transform: scale(1);
+}
+
+/* ─── Hero image subtle scale on load ───────────────────── */
+/* .hero-image-enter is on the <img> inside [data-reveal="image"] */
+.hero-image-enter {
+  transform: scale(1.03);
+  transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* When the parent wrapper becomes visible, the img inside transitions to scale(1) */
+.motion-enhanced [data-reveal-visible="true"] .hero-image-enter,
+.motion-enhanced .hero-image-enter[data-reveal-visible="true"] {
+  transform: scale(1);
+}
+
+/* ─── Project index transition ───────────────────────────── */
+/* Outgoing project number / title */
+.proj-out {
+  animation: proj-slide-out 360ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+/* Incoming project number / title */
+.proj-in {
+  animation: proj-slide-in 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes proj-slide-out {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-16px); opacity: 0; }
+}
+
+@keyframes proj-slide-in {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ─── Project image reveal via clip-path ─────────────────── */
+.proj-image-reveal {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 540ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.proj-image-reveal.is-entering {
+  animation: proj-image-in 540ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes proj-image-in {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+/* ─── Progress bar ───────────────────────────────────────── */
+.proj-progress-fill {
+  transform-origin: left center;
+  transition: transform 540ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Floating editorial panels ──────────────────────────── */
+/* Panels are children of [data-reveal="image"] — use ancestor trigger */
+.editorial-panel {
+  transform: translateY(14px);
+  opacity: 0;
+  transition:
+    transform 560ms cubic-bezier(0.22, 1, 0.36, 1) var(--panel-delay, 400ms),
+    opacity 420ms ease var(--panel-delay, 400ms);
+}
+
+.motion-enhanced [data-reveal-visible="true"] .editorial-panel,
+.motion-enhanced .editorial-panel[data-reveal-visible="true"] {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ─── Reduced motion ──────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -159,5 +283,29 @@ body {
   .project-media [data-project-overlay] {
     transform: none !important;
     transition: none !important;
+  }
+
+  .reveal-line > span,
+  .arch-line-h,
+  .arch-line-v,
+  .hero-image-enter {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .editorial-panel {
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .proj-out,
+  .proj-in,
+  .proj-image-reveal.is-entering {
+    animation: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

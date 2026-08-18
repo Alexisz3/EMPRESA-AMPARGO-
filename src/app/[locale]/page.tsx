@@ -5,12 +5,13 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { About } from "@/components/sections/about";
 import { FinalCta } from "@/components/sections/final-cta";
-import { FeaturedProjects } from "@/components/sections/featured-projects";
+import { FeaturedProjectsHome } from "@/components/sections/featured-projects-home";
 import { Hero } from "@/components/sections/hero";
 import { ProjectTransformation } from "@/components/sections/project-transformation";
 import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
 import { getLocalizedMetadata } from "@/lib/seo";
+
 
 type HomePageProps = {
   params: Promise<{ locale: string }>;
@@ -35,7 +36,7 @@ export default async function HomePage({ params }: HomePageProps) {
       <main>
         <Hero />
         <Services />
-        <FeaturedProjects />
+        <FeaturedProjectsHome />
         <About />
         <ProjectTransformation />
         <Process />

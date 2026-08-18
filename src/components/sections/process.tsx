@@ -24,9 +24,22 @@ export async function Process() {
           </p>
         </div>
 
-        <ol data-process-grid data-reveal-group className="mt-12 grid gap-x-6 gap-y-7 sm:grid-cols-2 sm:gap-y-10 lg:mt-16 lg:grid-cols-5">
+        {/* Architectural line — reveals as section enters */}
+        <span
+          aria-hidden="true"
+          data-reveal
+          className="arch-line-h mt-10 block h-px w-full bg-foreground/12 lg:mt-14"
+          style={{ "--line-delay": "80ms" } as React.CSSProperties}
+        />
+
+        <ol data-process-grid data-reveal-group className="mt-8 grid gap-x-6 gap-y-7 sm:grid-cols-2 sm:gap-y-10 lg:mt-10 lg:grid-cols-5">
           {steps.map((step, index) => (
-            <li key={step} data-reveal className="border-t border-black/15 pt-5 sm:pt-6">
+            <li
+              key={step}
+              data-reveal
+              className="border-t border-black/15 pt-5 sm:pt-6"
+              style={{ "--reveal-distance": "18px" } as React.CSSProperties}
+            >
               <span className="text-sm font-semibold tracking-[0.16em] text-accent">
                 {String(index + 1).padStart(2, "0")}
               </span>

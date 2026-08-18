@@ -25,12 +25,25 @@ export async function ProjectTransformation() {
           </p>
         </div>
 
-        <div data-transformation-grid data-reveal-group className="mt-12 grid gap-4 md:grid-cols-2 lg:mt-16">
-          {stages.map((stage) => (
+        {/* Thin separator line */}
+        <span
+          aria-hidden="true"
+          data-reveal
+          className="arch-line-h mt-10 block h-px w-full bg-white/10 lg:mt-14"
+          style={{ "--line-delay": "60ms" } as React.CSSProperties}
+        />
+
+        <div
+          data-transformation-grid
+          data-reveal-group
+          className="mt-8 grid gap-4 md:grid-cols-2 lg:mt-10"
+        >
+          {stages.map((stage, stageIndex) => (
             <figure
               key={stage}
               data-reveal
               className="project-media group relative aspect-[16/10] min-w-0 overflow-hidden rounded-[1.75rem] bg-black/20 md:aspect-[4/3]"
+              style={{ "--reveal-distance": "18px" } as React.CSSProperties}
             >
               <Image
                 src={`/images/transformation/patio-${stage}.jpeg`}
@@ -41,11 +54,19 @@ export async function ProjectTransformation() {
                   stage === "framing" ? "object-[50%_50%]" : "object-[50%_48%]"
                 }`}
               />
-              <div data-project-overlay className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+              <div
+                data-project-overlay
+                className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"
+              />
               <figcaption className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
-                <span className="inline-flex rounded-full bg-background px-4 py-2 text-sm font-semibold text-foreground">
-                  {t(`stages.${stage}.label`)}
-                </span>
+                <div className="flex items-end justify-between">
+                  <span className="inline-flex rounded-full bg-background px-4 py-2 text-sm font-semibold text-foreground">
+                    {t(`stages.${stage}.label`)}
+                  </span>
+                  <span className="text-xs font-semibold tracking-[0.18em] text-white/40">
+                    {String(stageIndex + 1).padStart(2, "0")} / {String(stages.length).padStart(2, "0")}
+                  </span>
+                </div>
               </figcaption>
             </figure>
           ))}
@@ -54,3 +75,4 @@ export async function ProjectTransformation() {
     </section>
   );
 }
+

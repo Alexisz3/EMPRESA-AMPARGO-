@@ -23,7 +23,10 @@
   },
   "Hero": {
     "eyebrow": "Remodeling & construction · Houston, Texas",
-    "title": "Transforming Spaces. Building What Matters.",
+    "titleLines": {
+      "lead": ["Transforming", "Spaces."],
+      "trail": ["Building What", "Matters."]
+    },
     "description": "Explore AMPARGO's remodeling and construction services, see real project work, and tell us what you are planning.",
     "primaryCta": "Request an Estimate",
     "secondaryCta": "View Projects",

@@ -7,8 +7,19 @@ import { Container } from "../ui/container";
 
 const trustIndicators = ["experience", "serviceArea", "projectTypes"] as const;
 
+type TitleLines = { lead: string[]; trail: string[] };
+
 export async function Hero() {
   const t = await getTranslations("Hero");
+
+  // The headline is split into lines for the masked line-by-line reveal. The
+  // split lives in the message files because Spanish breaks in different
+  // places than English and runs longer, so line counts may differ per locale.
+  const { lead, trail } = t.raw("titleLines") as TitleLines;
+  const titleLines = [
+    ...lead.map((text) => ({ text, muted: false })),
+    ...trail.map((text) => ({ text, muted: true })),
+  ];
 
   return (
     <section className="relative overflow-hidden pb-12 pt-6 sm:py-20 lg:pb-0 lg:pt-16">
@@ -47,58 +58,22 @@ export async function Hero() {
 
             {/* H1 — split by line for reveal */}
             <h1 className="mt-4 text-[clamp(2.35rem,8.5vw,3.25rem)] font-semibold leading-[0.96] tracking-[-0.045em] sm:mt-6 sm:text-6xl lg:text-[3.25rem] xl:text-7xl">
-              <span
-                data-reveal="hero"
-                className="reveal-line"
-                style={
-                  {
-                    "--line-delay": "100ms",
-                    "--line-duration": "660ms",
-                    "--line-distance": "36px",
-                  } as React.CSSProperties
-                }
-              >
-                <span>Transforming</span>
-              </span>
-              <span
-                data-reveal="hero"
-                className="reveal-line"
-                style={
-                  {
-                    "--line-delay": "150ms",
-                    "--line-duration": "660ms",
-                    "--line-distance": "36px",
-                  } as React.CSSProperties
-                }
-              >
-                <span>Spaces.</span>
-              </span>
-              <span
-                data-reveal="hero"
-                className="reveal-line text-muted"
-                style={
-                  {
-                    "--line-delay": "200ms",
-                    "--line-duration": "660ms",
-                    "--line-distance": "36px",
-                  } as React.CSSProperties
-                }
-              >
-                <span>Building What</span>
-              </span>
-              <span
-                data-reveal="hero"
-                className="reveal-line text-muted"
-                style={
-                  {
-                    "--line-delay": "250ms",
-                    "--line-duration": "660ms",
-                    "--line-distance": "36px",
-                  } as React.CSSProperties
-                }
-              >
-                <span>Matters.</span>
-              </span>
+              {titleLines.map((line, index) => (
+                <span
+                  key={`${line.text}-${index}`}
+                  data-reveal="hero"
+                  className={`reveal-line${line.muted ? " text-muted" : ""}`}
+                  style={
+                    {
+                      "--line-delay": `${100 + index * 50}ms`,
+                      "--line-duration": "660ms",
+                      "--line-distance": "36px",
+                    } as React.CSSProperties
+                  }
+                >
+                  <span>{line.text}</span>
+                </span>
+              ))}
             </h1>
 
             <p
@@ -200,11 +175,11 @@ export async function Hero() {
                 style={{ "--panel-delay": "600ms" } as React.CSSProperties}
                 aria-hidden="true"
               >
-                <p className="text-xl font-semibold leading-none tracking-[-0.03em] text-white sm:text-2xl">
-                  30+
+                <p className="text-lg font-semibold leading-tight tracking-[-0.03em] text-white sm:text-xl">
+                  {t("trust.experience.value")}
                 </p>
                 <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-white/65">
-                  Years Experience
+                  {t("trust.experience.label")}
                 </p>
               </div>
 
@@ -216,7 +191,7 @@ export async function Hero() {
                 aria-hidden="true"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
-                  Houston, TX
+                  {t("trust.serviceArea.value")}
                 </p>
               </div>
             </div>

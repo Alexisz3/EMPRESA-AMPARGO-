@@ -23,7 +23,10 @@
   },
   "Hero": {
     "eyebrow": "Remodelación y construcción · Houston, Texas",
-    "title": "Transformamos espacios. Construimos lo que importa.",
+    "titleLines": {
+      "lead": ["Transformamos", "espacios."],
+      "trail": ["Construimos lo", "que importa."]
+    },
     "description": "Conozca los servicios de remodelación y construcción de AMPARGO, descubra proyectos reales y cuéntenos qué está planificando.",
     "primaryCta": "Solicitar cotización",
     "secondaryCta": "Ver proyectos",

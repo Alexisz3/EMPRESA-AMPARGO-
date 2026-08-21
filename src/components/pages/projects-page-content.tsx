@@ -21,7 +21,7 @@ export async function ProjectsPageContent() {
       <section className="bg-foreground py-16 text-background sm:py-24 lg:py-32">
         <Container>
           <div data-reveal="hero">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">{t("hero.eyebrow")}</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-on-dark">{t("hero.eyebrow")}</p>
           <div className="mt-6 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-20">
             <h1 className="max-w-4xl text-[clamp(2.65rem,11.5vw,3rem)] font-semibold leading-[0.98] tracking-[-0.05em] sm:text-6xl lg:text-8xl">{t("hero.title")}</h1>
             <p className="max-w-xl text-lg leading-8 text-white/70">{t("hero.description")}</p>

@@ -12,10 +12,10 @@ export async function FinalCta() {
       <Container>
         <div data-reveal className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#27312e] px-6 py-14 sm:px-12 sm:py-20 lg:px-20 lg:py-24">
           <div aria-hidden="true" className="absolute -right-24 -top-24 size-80 rounded-full border border-white/10" />
-          <div aria-hidden="true" className="absolute -bottom-40 -left-24 size-96 rounded-full border border-[#d18a62]/25" />
+          <div aria-hidden="true" className="absolute -bottom-40 -left-24 size-96 rounded-full border border-accent-on-dark/25" />
 
           <div className="relative z-10 max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-on-dark">
               {t("eyebrow")}
             </p>
             <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-7xl">

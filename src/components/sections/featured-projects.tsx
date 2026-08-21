@@ -52,7 +52,7 @@ export async function FeaturedProjects() {
       <Container>
         <div data-reveal className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-12">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-on-dark">
               {t("eyebrow")}
             </p>
             <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
@@ -64,7 +64,7 @@ export async function FeaturedProjects() {
           </div>
           <Link
             href="/projects"
-            className="inline-flex min-h-11 w-fit items-center gap-2 text-base font-semibold text-white underline-offset-4 transition-colors hover:text-[#d18a62] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="inline-flex min-h-11 w-fit items-center gap-2 text-base font-semibold text-white underline-offset-4 transition-colors hover:text-accent-on-dark hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             {t("viewAll")} <span aria-hidden="true">→</span>
           </Link>

@@ -6,6 +6,9 @@
   --surface: #ffffff;
   --muted: #66716c;
   --accent: #a35b35;
+  /* The accent lightened for use on the dark `foreground` surfaces, where the
+     base accent does not clear the WCAG AA contrast floor. */
+  --accent-on-dark: #d18a62;
 }
 
 @theme inline {
@@ -14,6 +17,7 @@
   --color-surface: var(--surface);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-accent-on-dark: var(--accent-on-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

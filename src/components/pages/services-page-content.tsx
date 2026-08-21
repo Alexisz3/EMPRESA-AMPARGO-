@@ -33,7 +33,7 @@ export async function ServicesPageContent() {
         <Container>
           <div data-reveal="hero" className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-16">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">{t("hero.eyebrow")}</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-on-dark">{t("hero.eyebrow")}</p>
               <h1 className="mt-5 max-w-4xl text-[clamp(2.2rem,9.8vw,3rem)] font-semibold leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
                 {t("hero.title")}
               </h1>

@@ -13,7 +13,7 @@ export async function ProjectTransformation() {
       <Container>
         <div data-reveal className="grid gap-7 lg:grid-cols-[0.92fr_1.08fr] lg:items-end lg:gap-16">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-on-dark">
               {t("eyebrow")}
             </p>
             <h2 className="mt-5 max-w-2xl text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-6xl">

@@ -12,7 +12,7 @@ export async function PrivacyPageContent() {
     <>
       <section className="bg-foreground py-20 text-background sm:py-24">
         <Container>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">{t("hero.eyebrow")}</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-on-dark">{t("hero.eyebrow")}</p>
           <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.05em] sm:text-6xl lg:text-7xl">{t("hero.title")}</h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70">{t("hero.description")}</p>
         </Container>

@@ -40,7 +40,7 @@ export async function Footer() {
           </div>
 
           <nav aria-label={t("quickLinksLabel")}>
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#d18a62]">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-accent-on-dark">
               {t("quickLinksLabel")}
             </h2>
             <ul className="mt-5 grid gap-3">
@@ -55,7 +55,7 @@ export async function Footer() {
           </nav>
 
           <nav aria-label={t("servicesLabel")}>
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#d18a62]">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-accent-on-dark">
               {t("servicesLabel")}
             </h2>
             <ul className="mt-5 grid gap-3">
@@ -70,7 +70,7 @@ export async function Footer() {
           </nav>
 
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#d18a62]">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-accent-on-dark">
               {t("contactLabel")}
             </h2>
             <p className="mt-5 text-white/70">Houston, TX</p>

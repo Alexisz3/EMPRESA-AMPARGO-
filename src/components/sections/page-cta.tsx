@@ -24,7 +24,7 @@ export function PageCta({
           <div aria-hidden="true" className="absolute -right-28 -top-28 size-80 rounded-full border border-white/10" />
           <div className="relative z-10 max-w-4xl">
             {eyebrow ? (
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-on-dark">
                 {eyebrow}
               </p>
             ) : null}

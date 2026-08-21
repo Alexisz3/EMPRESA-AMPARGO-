@@ -68,7 +68,7 @@ export async function AboutPageContent() {
       <section className="bg-foreground py-16 text-background sm:py-24 lg:py-28">
         <Container>
           <div data-reveal className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-on-dark">
               {t("approach.eyebrow")}
             </p>
             <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
@@ -81,7 +81,7 @@ export async function AboutPageContent() {
           <div data-reveal-group className="mt-12 grid gap-x-6 gap-y-8 sm:grid-cols-2 sm:gap-y-10 lg:mt-16 lg:grid-cols-4">
             {approachItems.map((item, index) => (
               <article key={item} data-reveal className="border-t border-white/20 pt-6">
-                <span className="text-sm font-semibold tracking-[0.16em] text-[#d18a62]">
+                <span className="text-sm font-semibold tracking-[0.16em] text-accent-on-dark">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-5 text-xl font-semibold">{t(`approach.items.${item}.title`)}</h3>

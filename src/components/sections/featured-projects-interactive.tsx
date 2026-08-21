@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
@@ -14,6 +14,22 @@ type Project = {
   sizes: string;
   alt: string;
 };
+
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribeToReducedMotion(onChange: () => void) {
+  const query = window.matchMedia(REDUCED_MOTION_QUERY);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+
+const getReducedMotion = () => window.matchMedia(REDUCED_MOTION_QUERY).matches;
+
+// The server cannot know the visitor's preference, so it renders the animated
+// markup and React swaps in the real value after hydration. Reading matchMedia
+// during render instead would make the server and client HTML disagree for
+// exactly the people who asked for less motion.
+const getReducedMotionOnServer = () => false;
 
 type Props = {
   eyebrow: string;
@@ -36,6 +52,12 @@ export function FeaturedProjectsInteractive({
   const sectionRef = useRef<HTMLElement>(null);
   const [revealed, setRevealed] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const reducedMotion = useSyncExternalStore(
+    subscribeToReducedMotion,
+    getReducedMotion,
+    getReducedMotionOnServer,
+  );
 
   // Intersection observer for section reveal
   useEffect(() => {
@@ -79,11 +101,6 @@ export function FeaturedProjectsInteractive({
   const total = projects.length;
   const progressPct = ((active + 1) / total) * 100;
 
-  const reducedMotion =
-    typeof window !== "undefined"
-      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      : false;
-
   return (
     <section
       ref={sectionRef}
@@ -99,7 +116,7 @@ export function FeaturedProjectsInteractive({
           style={{ transitionDelay: revealed ? "0ms" : "0ms" }}
         >
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d18a62]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-on-dark">
               {eyebrow}
             </p>
             <h2 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
@@ -111,7 +128,7 @@ export function FeaturedProjectsInteractive({
           </div>
           <Link
             href="/projects"
-            className="inline-flex min-h-11 w-fit items-center gap-2 text-base font-semibold text-white underline-offset-4 transition-colors hover:text-[#d18a62] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className="inline-flex min-h-11 w-fit items-center gap-2 text-base font-semibold text-white underline-offset-4 transition-colors hover:text-accent-on-dark hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
           >
             {viewAll} <span aria-hidden="true">→</span>
           </Link>
@@ -146,7 +163,7 @@ export function FeaturedProjectsInteractive({
                   >
                     <span
                       className={`mt-0.5 min-w-[2.25rem] text-xs font-semibold tracking-[0.18em] transition-colors duration-200 ${
-                        active === i ? "text-[#d18a62]" : "text-white/30 group-hover:text-white/50"
+                        active === i ? "text-accent-on-dark" : "text-white/30 group-hover:text-white/50"
                       }`}
                     >
                       {project.index}
@@ -166,7 +183,7 @@ export function FeaturedProjectsInteractive({
             {/* Editorial progress indicator */}
             <div className="mt-10 px-3">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-semibold tracking-[0.18em] text-[#d18a62]">
+                <span className="text-xs font-semibold tracking-[0.18em] text-accent-on-dark">
                   {current.index}
                 </span>
                 <span className="text-xs font-medium text-white/35 tracking-[0.12em]">
@@ -175,7 +192,7 @@ export function FeaturedProjectsInteractive({
               </div>
               <div className="h-px w-full bg-white/12 overflow-hidden rounded-full">
                 <div
-                  className="proj-progress-fill h-full bg-[#d18a62] rounded-full"
+                  className="proj-progress-fill h-full bg-accent-on-dark rounded-full"
                   style={{
                     transform: `scaleX(${progressPct / 100})`,
                     transformOrigin: "left center",
@@ -233,7 +250,7 @@ export function FeaturedProjectsInteractive({
                     key={`title-${active}`}
                     className={reducedMotion ? "" : "proj-in"}
                   >
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d18a62] mb-2">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-on-dark mb-2">
                       {current.category}
                     </p>
                     <span className="text-2xl font-semibold tracking-[-0.02em] text-white xl:text-3xl">
@@ -272,7 +289,7 @@ export function FeaturedProjectsInteractive({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent transition-opacity duration-[560ms] group-hover:opacity-[0.82]" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#d18a62] mb-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-on-dark mb-1">
                     {project.index}
                   </p>
                   <span className="text-lg font-semibold tracking-[-0.015em] text-white">
